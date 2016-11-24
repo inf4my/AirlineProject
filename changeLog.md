@@ -6,3 +6,6 @@
 
 21 November 2016 -Taksu (taksu01)
 -Testing Git
+
+24-November 2016 -Taksu
+-Coba Push
