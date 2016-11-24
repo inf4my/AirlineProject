@@ -44,12 +44,12 @@ public class Customer{
         this.password=hash(password);
     }
 
-    public boolean login(String username, String password){
+    public boolean login(String username, String password) throws AuthenticationException{
         if(this.username.equals(username)){
             if(this.password.equals(hash(password))){
                 return true;
             }
-            return false;
+            throw new AuthenticationException("Incorrect username / password");
         }
         return false;
     }
