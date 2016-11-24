@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.TitledPane?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.101" fx:controller="Controller.ControllerUtama">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Accordion>
-        <panes>
-          <TitledPane animated="false" text="untitled 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" text="untitled 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" text="untitled 3">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
+      <JFXButton layoutX="458.0" layoutY="12.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE" />
+      <JFXButton layoutX="522.0" layoutY="12.0" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: blue;" text="Sign Up" textFill="WHITE" />
+      <AnchorPane layoutX="16.0" layoutY="138.0" prefHeight="196.0" prefWidth="572.0" style="-fx-background-color: grey;">
+         <children>
+            <Label layoutX="14.0" layoutY="31.0" text="From" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="90.0" text="Destination" textFill="WHITE" />
+            <JFXComboBox layoutX="14.0" layoutY="55.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXComboBox layoutX="14.0" layoutY="123.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXDatePicker layoutX="187.0" layoutY="52.0" promptText="Tanggal Pergi" />
+            <Label layoutX="197.0" layoutY="31.0" text="Time" textFill="WHITE" />
+            <JFXRadioButton layoutX="177.0" layoutY="99.0" prefHeight="17.0" prefWidth="65.0" text="Pulang-Pergi" />
+            <JFXRadioButton layoutX="297.0" layoutY="99.0" text="Sekali Jalan" />
+            <JFXDatePicker layoutX="187.0" layoutY="120.0" promptText="Tanggal Pulang" />
+         </children>
+      </AnchorPane>
    </children>
-</GridPane>
+</AnchorPane>
