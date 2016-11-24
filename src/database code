@@ -1,0 +1,17 @@
+CREATE DATABASE dummy;
+
+CREATE TABLE customer(
+	id varchar(10) PRIMARY KEY,
+	name varchar(255),
+	username varchar(255),
+	password varchar(255),
+)
+
+CREATE TABLE penerbangan(
+	kodePenerbangan varchar(255),
+	keberangkatan varchar(255),
+	tujuan varchar(255),
+	jenisPesawat varchar(255),
+	transit varchar(255),
+
+)
