@@ -17,7 +17,7 @@ public class ControllerUtama {
     private JFXButton btnSearch, btnLogin, btnSignUp;
 
     @FXML
-    private JFXComboBox<String> cboAsal, cboTujuan;
+    private JFXComboBox<String> cboAsal, cboTujuan, cboKelasPenerbangan;
 
     @FXML
     private JFXDatePicker dtpPergi, dtpPulang;

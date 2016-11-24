@@ -81,7 +81,18 @@
             <Label layoutX="392.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Dewasa(&gt;11 tahun)" />
             <Label layoutX="510.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Anak(2-11 tahun)" />
             <Label layoutX="625.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Bayi(&lt;2 tahun)" />
-            <JFXComboBox layoutX="592.0" layoutY="117.0" prefHeight="25.0" prefWidth="108.0" />
+            <JFXComboBox fx:id="cboKelasPenerbangan" layoutX="592.0" layoutY="117.0" prefHeight="25.0" prefWidth="108.0" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Ekonomi"/>
+                  <String fx:value="Bisnis"/>
+                  <String fx:value="First Class"/>
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="Ekonomi"/>
+               </value>
+            </JFXComboBox>
             <Label layoutX="592.0" layoutY="98.0" prefHeight="17.0" prefWidth="108.0" text="Kelas Penerbangan" />
          </children>
       </AnchorPane>
