@@ -2,26 +2,37 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
        <JFXButton fx:id="btnLogin" layoutX="622.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE" />
        <JFXButton fx:id="btnSignUp" layoutX="701.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Sign Up" textFill="WHITE" />
-       <Accordion layoutX="48.0" layoutY="176.0" prefHeight="320.0" prefWidth="713.0">
+      <Label layoutX="81.0" layoutY="304.0" prefHeight="31.0" prefWidth="65.0" text="Filter : ">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="159.0" layoutY="300.0" prefHeight="38.0" prefWidth="75.0" style="-fx-background-color: grey;" text="Harga" />
+      <JFXButton layoutX="244.0" layoutY="300.0" prefHeight="38.0" prefWidth="75.0" style="-fx-background-color: grey;" text="Transit" />
+      <JFXButton layoutX="331.0" layoutY="300.0" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: grey;" text="Maskapai" />
+      <JFXButton layoutX="438.0" layoutY="300.0" prefHeight="38.0" prefWidth="75.0" style="-fx-background-color: grey;" text="Waktu" />
+      <Accordion layoutX="81.0" layoutY="366.0" prefHeight="176.0" prefWidth="640.0">
         <panes>
+          <TitledPane animated="false" style="-fx-background-color: red;" text="untitled 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
           <TitledPane animated="false" text="untitled 2">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </TitledPane>
           <TitledPane animated="false" text="untitled 3">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" prefHeight="132.0" prefWidth="605.0" text="aaaa1">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
