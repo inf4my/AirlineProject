@@ -1,8 +1,101 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="Controller.ControllerUtama"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
+   <children>
+      <JFXButton fx:id="btnLogin" layoutX="622.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE" />
+      <JFXButton fx:id="btnSignUp" layoutX="701.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Sign Up" textFill="WHITE" />
+      <AnchorPane layoutX="34.0" layoutY="328.0" prefHeight="196.0" prefWidth="733.0" style="-fx-background-color: grey;">
+         <children>
+            <Label layoutX="21.0" layoutY="28.0" text="From" textFill="WHITE" />
+            <Label layoutX="21.0" layoutY="87.0" text="Destination" textFill="WHITE" />
+            <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Pergi" />
+            <Label layoutX="204.0" layoutY="28.0" text="Time" textFill="WHITE" />
+            <JFXRadioButton layoutX="184.0" layoutY="96.0" prefHeight="17.0" prefWidth="65.0" text="Pulang-Pergi">
+               <toggleGroup>
+                  <ToggleGroup fx:id="jenisTiket" />
+               </toggleGroup></JFXRadioButton>
+            <JFXRadioButton layoutX="304.0" layoutY="96.0" text="Sekali Jalan" toggleGroup="$jenisTiket" />
+            <JFXDatePicker fx:id="dtpPulang" layoutX="194.0" layoutY="117.0" promptText="Tanggal Pulang" />
+            <JFXComboBox fx:id="cboTiketDewasa" layoutX="392.0" layoutY="35.0" prefHeight="25.0" prefWidth="108.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="1" />
+                     <String fx:value="2" />
+                     <String fx:value="3" />
+                     <String fx:value="4" />
+                     <String fx:value="5" />
+                     <String fx:value="6" />
+                     <String fx:value="7" />
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="1" />
+               </value>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cboTiketAnak" layoutX="510.0" layoutY="35.0" prefHeight="25.0" prefWidth="108.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="0" />
+                     <String fx:value="1" />
+                     <String fx:value="2" />
+                     <String fx:value="3" />
+                     <String fx:value="4" />
+                     <String fx:value="5" />
+                     <String fx:value="6" />
+                     <String fx:value="7" />
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="0" />
+               </value>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cboTiketBayi" layoutX="625.0" layoutY="35.0" prefHeight="25.0" prefWidth="108.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="0" />
+                     <String fx:value="1" />
+                     <String fx:value="2" />
+                     <String fx:value="3" />
+                     <String fx:value="4" />
+                     <String fx:value="5" />
+                     <String fx:value="6" />
+                     <String fx:value="7" />
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="0" />
+               </value>
+            </JFXComboBox>
+            <Label layoutX="392.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Dewasa(&gt;11 tahun)" />
+            <Label layoutX="510.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Anak(2-11 tahun)" />
+            <Label layoutX="625.0" layoutY="19.0" prefHeight="17.0" prefWidth="108.0" text="Bayi(&lt;2 tahun)" />
+            <JFXComboBox fx:id="cboKelasPenerbangan" layoutX="592.0" layoutY="117.0" prefHeight="25.0" prefWidth="108.0" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Ekonomi"/>
+                  <String fx:value="Bisnis"/>
+                  <String fx:value="First Class"/>
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="Ekonomi"/>
+               </value>
+            </JFXComboBox>
+            <Label layoutX="592.0" layoutY="98.0" prefHeight="17.0" prefWidth="108.0" text="Kelas Penerbangan" />
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnSearch" layoutX="703.0" layoutY="552.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Search" textFill="WHITE" />
+   </children>
+</AnchorPane>
