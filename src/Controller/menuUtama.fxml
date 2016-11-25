@@ -18,8 +18,85 @@
          <children>
             <Label layoutX="21.0" layoutY="28.0" text="From" textFill="WHITE" />
             <Label layoutX="21.0" layoutY="87.0" text="Destination" textFill="WHITE" />
-            <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0" />
-            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="AMBON" />
+                     <String fx:value="BALI/DENPASAR" />
+                     <String fx:value="BANDA ACEH" />
+                     <String fx:value="BANDUNG" />
+                     <String fx:value="BANJARMASIN" />
+                     <String fx:value="BATAM" />
+                     <String fx:value="GORONTALO" />
+                     <String fx:value="JAKARTA" />
+                     <String fx:value="JAMBI" />
+                     <String fx:value="JAYAPURA" />
+                     <String fx:value="YOGYAKARTA" />
+                     <String fx:value="KENDARI" />
+                     <String fx:value="KUPANG" />
+                     <String fx:value="LOMBOK" />
+                     <String fx:value="MALANG" />
+                     <String fx:value="MANADO" />
+                     <String fx:value="PADANG" />
+                     <String fx:value="PALANGKARAYA" />
+                     <String fx:value="PALEMBANG" />
+                     <String fx:value="PALU" />
+                     <String fx:value="PANGKAL PINANG" />
+                     <String fx:value="PEKANBARU" />
+                     <String fx:value="PONTIANAK" />
+                     <String fx:value="SEMARANG" />
+                     <String fx:value="SOLO" />
+                     <String fx:value="SURABAYA" />
+                     <String fx:value="BANDAR LAMPUNG" />
+                     <String fx:value="TERNATE" />
+                     <String fx:value="TIMIKA" />
+                     <String fx:value="UJUNG PANDANG/MAKASSAR" />
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="JAKARTA (JKT)" />
+               </value>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="AMBON" />
+                     <String fx:value="BALI/DENPASAR" />
+                     <String fx:value="BANDA ACEH" />
+                     <String fx:value="BANDUNG" />
+                     <String fx:value="BANJARMASIN" />
+                     <String fx:value="BATAM" />
+                     <String fx:value="GORONTALO" />
+                     <String fx:value="JAKARTA" />
+                     <String fx:value="JAMBI" />
+                     <String fx:value="JAYAPURA" />
+                     <String fx:value="YOGYAKARTA" />
+                     <String fx:value="KENDARI" />
+                     <String fx:value="KUPANG" />
+                     <String fx:value="LOMBOK" />
+                     <String fx:value="MALANG" />
+                     <String fx:value="MANADO" />
+                     <String fx:value="PADANG" />
+                     <String fx:value="PALANGKARAYA" />
+                     <String fx:value="PALEMBANG" />
+                     <String fx:value="PALU" />
+                     <String fx:value="PANGKAL PINANG" />
+                     <String fx:value="PEKANBARU" />
+                     <String fx:value="PONTIANAK" />
+                     <String fx:value="SEMARANG" />
+                     <String fx:value="SOLO" />
+                     <String fx:value="SURABAYA" />
+                     <String fx:value="BANDAR LAMPUNG" />
+                     <String fx:value="TERNATE" />
+                     <String fx:value="TIMIKA" />
+                     <String fx:value="UJUNG PANDANG/MAKASSAR" />
+                  </FXCollections>
+               </items>
+               <value>
+                  <String fx:value="JAKARTA (JKT)" />
+               </value>
+
+            </JFXComboBox>
             <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Pergi" />
             <Label layoutX="204.0" layoutY="28.0" text="Time" textFill="WHITE" />
             <JFXRadioButton layoutX="184.0" layoutY="96.0" prefHeight="17.0" prefWidth="65.0" text="Pulang-Pergi">
