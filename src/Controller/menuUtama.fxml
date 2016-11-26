@@ -12,14 +12,97 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
    <children>
-      <JFXButton fx:id="btnLogin" layoutX="622.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Login" textFill="WHITE" />
-      <JFXButton fx:id="btnSignUp" layoutX="701.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Sign Up" textFill="WHITE" />
+      <JFXButton fx:id="btnLogin" layoutX="622.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #1565C0;" text="Login" textFill="WHITE" />
+      <JFXButton fx:id="btnSignUp" layoutX="701.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #1565C0;" text="Sign Up" textFill="WHITE" />
       <AnchorPane layoutX="34.0" layoutY="328.0" prefHeight="196.0" prefWidth="733.0" style="-fx-background-color: grey;">
          <children>
             <Label layoutX="21.0" layoutY="28.0" text="From" textFill="WHITE" />
             <Label layoutX="21.0" layoutY="87.0" text="Destination" textFill="WHITE" />
-            <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0" />
-            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0" />
+            <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0">
+               <items>
+                     <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="AMBON (AMQ)" />
+                     <String fx:value="BALI/DENPASAR (DPS)" />
+                     <String fx:value="BALIKPAPAN (BPN)" />
+                     <String fx:value="BANDA ACEH (BTJ)" />
+                     <String fx:value="BANDUNG (BDO)" />
+                     <String fx:value="BANJARMASIN (BDJ)" />
+                     <String fx:value="BATAM (BTH)" />
+                     <String fx:value="BIAK (BIK)" />
+                     <String fx:value="GORONTALO (GTO)" />
+                     <String fx:value="JAKARTA (JKT)" />
+                     <String fx:value="JAMBI (DJB)" />
+                     <String fx:value="JAYAPURA (DJJ)" />
+                     <String fx:value="YOGYAKARTA (JOG)" />
+                     <String fx:value="KENDARI (KDI)" />
+                     <String fx:value="KUPANG (KOE)" />
+                     <String fx:value="LOMBOK (LOP)" />
+                     <String fx:value="MALANG (MLG)" />
+                     <String fx:value="MANADO (MDO)" />
+                     <String fx:value="PADANG (PDG)" />
+                     <String fx:value="PALANGKARAYA (PKY)" />
+                     <String fx:value="PALEMBANG (PLM)" />
+                     <String fx:value="PALU (PLW)" />
+                     <String fx:value="PANGKAL PINANG (PGK)" />
+                     <String fx:value="PEKANBARU (PKU)" />
+                     <String fx:value="PONTIANAK (PNK)" />
+                     <String fx:value="SEMARANG (SRG)" />
+                     <String fx:value="SOLO (SOC)" />
+                     <String fx:value="SURABAYA (SUB)" />
+                     <String fx:value="BANDAR LAMPUNG/TANJUNG KARANG (TKG)" />
+                     <String fx:value="TERNATE (TTE)" />
+                     <String fx:value="TIMIKA (TIM)" />
+                     <String fx:value="UJUNG PANDANG/MAKASSAR (UPG)" />
+                  </FXCollections>
+               </items>
+
+               <value>
+                  <String fx:value="JAKARTA (JKT)" />
+               </value>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="AMBON (AMQ)" />
+                     <String fx:value="BALI/DENPASAR (DPS)" />
+                     <String fx:value="BALIKPAPAN (BPN)" />
+                     <String fx:value="BANDA ACEH (BTJ)" />
+                     <String fx:value="BANDUNG (BDO)" />
+                     <String fx:value="BANJARMASIN (BDJ)" />
+                     <String fx:value="BATAM (BTH)" />
+                     <String fx:value="BIAK (BIK)" />
+                     <String fx:value="GORONTALO (GTO)" />
+                     <String fx:value="JAKARTA (JKT)" />
+                     <String fx:value="JAMBI (DJB)" />
+                     <String fx:value="JAYAPURA (DJJ)" />
+                     <String fx:value="YOGYAKARTA (JOG)" />
+                     <String fx:value="KENDARI (KDI)" />
+                     <String fx:value="KUPANG (KOE)" />
+                     <String fx:value="LOMBOK (LOP)" />
+                     <String fx:value="MALANG (MLG)" />
+                     <String fx:value="MANADO (MDO)" />
+                     <String fx:value="PADANG (PDG)" />
+                     <String fx:value="PALANGKARAYA (PKY)" />
+                     <String fx:value="PALEMBANG (PLM)" />
+                     <String fx:value="PALU (PLW)" />
+                     <String fx:value="PANGKAL PINANG (PGK)" />
+                     <String fx:value="PEKANBARU (PKU)" />
+                     <String fx:value="PONTIANAK (PNK)" />
+                     <String fx:value="SEMARANG (SRG)" />
+                     <String fx:value="SOLO (SOC)" />
+                     <String fx:value="SURABAYA (SUB)" />
+                     <String fx:value="BANDAR LAMPUNG/TANJUNG KARANG (TKG)" />
+                     <String fx:value="TERNATE (TTE)" />
+                     <String fx:value="TIMIKA (TIM)" />
+                     <String fx:value="UJUNG PANDANG/MAKASSAR (UPG)" />
+                  </FXCollections>
+               </items>
+
+               <value>
+                  <String fx:value="JAKARTA (JKT)" />
+               </value>
+
+            </JFXComboBox>
             <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Pergi" />
             <Label layoutX="204.0" layoutY="28.0" text="Time" textFill="WHITE" />
             <JFXRadioButton layoutX="184.0" layoutY="96.0" prefHeight="17.0" prefWidth="65.0" text="Pulang-Pergi">
