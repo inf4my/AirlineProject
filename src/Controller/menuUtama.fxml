@@ -99,7 +99,7 @@
                </items>
 
                <value>
-                  <String fx:value="JAKARTA (JKT)" />
+                  <String fx:value="Tujuan" />
                </value>
 
             </JFXComboBox>
