@@ -8,8 +8,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import Exception.EmptyPropertyException;
 
 public class ControllerUtama {
 
@@ -17,20 +19,30 @@ public class ControllerUtama {
     private JFXButton btnSearch, btnLogin, btnSignUp;
 
     @FXML
-    private JFXComboBox<String> cboAsal, cboTujuan, cboKelasPenerbangan;
+    private JFXComboBox<java.lang.String> cboAsal, cboTujuan, cboKelasPenerbangan;
 
     @FXML
     private JFXDatePicker dtpPergi, dtpPulang;
 
     @FXML
-    private JFXComboBox<String> cboTiketDewasa, cboTiketAnak, cboTiketBayi;
+    private JFXComboBox<java.lang.String> cboTiketDewasa, cboTiketAnak, cboTiketBayi;
 
     @FXML
     private ToggleGroup jenisTiket;
 
     @FXML
-    public void handleBtnSearch(){
+    public void handleBtnSearch() throws EmptyPropertyException{
         try{
+            if(dtpPergi.getValue() == null || dtpPulang.getValue() == null){
+                throw new EmptyPropertyException();
+            }
+            if(cboTujuan.getValue().equals("Tujuan")){
+                throw new EmptyPropertyException();
+            }
+            if(cboTiketDewasa.getValue().equals("0")){
+                throw new EmptyPropertyException();
+            }
+            //System.out.println(cboTujuan.getValue());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("searchFlight.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
@@ -41,6 +53,9 @@ public class ControllerUtama {
             /*SignUpController signUpController = (SignUpController) loader.getController();
             signUpController.setLstOfUser(lstOfUser);
             */
+        }
+        catch (EmptyPropertyException e){
+            e.periksaSemua();
         }
         catch (Exception e){
             e.printStackTrace();

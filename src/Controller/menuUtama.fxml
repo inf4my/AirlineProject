@@ -12,12 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
    <children>
-      <JFXButton fx:id="btnLogin" layoutX="622.0" layoutY="14.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #1565C0;" text="Login" textFill="WHITE" />
-      <JFXButton fx:id="btnSignUp" layoutX="701.0" layoutY="14.0" onAction="#handleButtonSignUp" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #1565C0;" text="Sign Up" textFill="WHITE" />
+      <JFXButton fx:id="btnLogin" layoutX="517.0" layoutY="14.0" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Masuk" textFill="WHITE" />
+      <JFXButton fx:id="btnSignUp" layoutX="655.0" layoutY="14.0" onAction="#handleButtonSignUp" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Pendaftaran Akun" textFill="WHITE" />
       <AnchorPane layoutX="34.0" layoutY="328.0" prefHeight="196.0" prefWidth="733.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="21.0" layoutY="28.0" text="From" textFill="WHITE" />
-            <Label layoutX="21.0" layoutY="87.0" text="Destination" textFill="WHITE" />
+            <Label layoutX="21.0" layoutY="28.0" text="Asal" textFill="WHITE" />
+            <Label layoutX="21.0" layoutY="87.0" text="Tujuan" textFill="WHITE" />
             <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0">
                <items>
                      <FXCollections fx:factory="observableArrayList">
@@ -103,14 +103,14 @@
                </value>
 
             </JFXComboBox>
-            <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Pergi" />
-            <Label layoutX="204.0" layoutY="28.0" text="Time" textFill="WHITE" />
+            <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Keberangkatan" />
+            <Label layoutX="204.0" layoutY="28.0" text="Tanggal" textFill="WHITE" />
             <JFXRadioButton layoutX="184.0" layoutY="96.0" prefHeight="17.0" prefWidth="65.0" text="Pulang-Pergi">
                <toggleGroup>
                   <ToggleGroup fx:id="jenisTiket" />
                </toggleGroup></JFXRadioButton>
             <JFXRadioButton layoutX="304.0" layoutY="96.0" text="Sekali Jalan" toggleGroup="$jenisTiket" />
-            <JFXDatePicker fx:id="dtpPulang" layoutX="194.0" layoutY="117.0" promptText="Tanggal Pulang" />
+            <JFXDatePicker fx:id="dtpPulang" layoutX="194.0" layoutY="117.0" promptText="Tanggal Kepulangan" />
             <JFXComboBox fx:id="cboTiketDewasa" layoutX="392.0" layoutY="35.0" prefHeight="25.0" prefWidth="108.0">
                <items>
                   <FXCollections fx:factory="observableArrayList">
@@ -179,6 +179,6 @@
             <Label layoutX="592.0" layoutY="98.0" prefHeight="17.0" prefWidth="108.0" text="Kelas Penerbangan" />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnSearch" layoutX="703.0" layoutY="552.0" onAction="#handleBtnSearch" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: blue;" text="Search" textFill="WHITE" />
+      <JFXButton fx:id="btnSearch" layoutX="655.0" layoutY="552.0" onAction="#handleBtnSearch" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: blue;" text="Cari" textFill="WHITE" />
    </children>
 </AnchorPane>
