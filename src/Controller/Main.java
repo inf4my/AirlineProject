@@ -14,7 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("menuUtama.fxml"));
         primaryStage.setTitle("Airlines");
         primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.getIcons().add(new Image(this.getClass().getResource("airplane.png").toString()));
+        //primaryStage.getIcons().add(new Image(this.getClass().getResource("airplane.png").toString()));
         primaryStage.show();
     }
 

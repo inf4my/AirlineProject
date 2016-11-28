@@ -31,11 +31,29 @@ public class ControllerUtama {
     @FXML
     public void handleBtnSearch(){
         try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("searchFlight.fxml"));
+            Parent entryForm = loader.load();
+            Stage entryStage = new Stage();
+            entryStage.setTitle("Searching Flight");
+            entryStage.setScene(new Scene(entryForm, 800,600));
+            entryStage.show();
+            entryStage.requestFocus();
+            /*SignUpController signUpController = (SignUpController) loader.getController();
+            signUpController.setLstOfUser(lstOfUser);
+            */
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void handleButtonSignUp(){
+        try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
-            entryStage.setTitle("Sign Up");
-            entryStage.setScene(new Scene(entryForm, 500,500));
+            entryStage.setTitle("Searching Flight");
+            entryStage.setScene(new Scene(entryForm, 800,600));
             entryStage.show();
             entryStage.requestFocus();
             /*SignUpController signUpController = (SignUpController) loader.getController();
