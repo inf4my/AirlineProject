@@ -28,11 +28,11 @@ public class Customer{
     }
 
     public String getEmail(){
-        return getEmail();
+        return email;
     }
 
     public String getPhoneNumber(){
-        return getPhoneNumber();
+        return phoneNumber;
     }
 
     public String getUsername(){
