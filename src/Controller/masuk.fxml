@@ -21,7 +21,8 @@
       </Label>
       <JFXTextField layoutX="151.0" layoutY="87.0" />
       <JFXPasswordField layoutX="151.0" layoutY="139.0" />
-      <JFXButton layoutX="227.0" layoutY="211.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #0277BD;" text="Masuk" textFill="WHITE" />
-      <JFXButton fx:id="btnBatal" layoutX="59.0" layoutY="211.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #FF3300;" text="Batal" textFill="WHITE" onAction="#handleBtnBatal"/>
+      <JFXButton layoutX="227.0" layoutY="211.0" onAction="#handleBtnMasuk" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #0277BD;" text="Masuk" textFill="WHITE" />
+      <JFXButton fx:id="btnBatal" layoutX="59.0" layoutY="211.0" onAction="#handleBtnBatal" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #FF3300;" text="Batal" textFill="WHITE" />
+      <JFXButton layoutX="180.0" layoutY="24.0" onAction="#handleBtnDaftar" text="Belum punya akun?" textFill="#12808a" underline="true" />
    </children>
 </AnchorPane>

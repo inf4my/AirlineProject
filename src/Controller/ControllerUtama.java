@@ -42,7 +42,24 @@ public class ControllerUtama {
     @FXML public void initialize(){
         datepergi = LocalDate.now();
         dtpPergi.setValue(datepergi);
+
+        dtpPulang.setDisable(false);
     }
+
+    public void handleBtnKal(){
+        if(rbSekali.isSelected()){
+            dtpPulang.setDisable(true);
+        }
+    }
+
+    public void handleBtnKalpp(){
+        if(rbPP.isSelected()){
+            dtpPulang.setDisable(false);
+        }
+    }
+
+
+
 
     @FXML
     public void handleBtnSearch(){
