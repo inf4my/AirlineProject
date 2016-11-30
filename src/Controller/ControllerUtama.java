@@ -3,6 +3,7 @@ package Controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXRadioButton;
 import com.sun.org.apache.xpath.internal.operations.String;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +29,10 @@ public class ControllerUtama {
     private JFXComboBox<java.lang.String> cboTiketDewasa, cboTiketAnak, cboTiketBayi;
 
     @FXML
-    private ToggleGroup jenisTiket;
+    private ToggleGroup tgJenis;
+
+    @FXML
+    private JFXRadioButton rbPP, rbSekali;
 
     @FXML
     public void handleBtnSearch(){

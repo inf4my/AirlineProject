@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("menuUtama.fxml"));
-        primaryStage.setTitle("Airlines");
+        primaryStage.setTitle("Rajawali Airline");
         primaryStage.setScene(new Scene(root, 800, 600));
         //primaryStage.getIcons().add(new Image(this.getClass().getResource("airplane.png").toString()));
         primaryStage.show();
