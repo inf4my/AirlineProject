@@ -11,7 +11,7 @@
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
    <children>
       <JFXButton fx:id="btnLogin" layoutX="517.0" layoutY="14.0" onAction="#handleBtnLogin" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Masuk" textFill="WHITE" />
       <JFXButton fx:id="btnSignUp" layoutX="655.0" layoutY="14.0" onAction="#handleButtonSignUp" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Pendaftaran Akun" textFill="WHITE" />
@@ -115,7 +115,7 @@
                   <ToggleGroup fx:id="jenisTiket" />
                </toggleGroup></JFXRadioButton>
             <JFXRadioButton fx:id="rbSekali" layoutX="304.0" layoutY="96.0" onAction="#handleBtnKal" text="Sekali Jalan" toggleGroup="$jenisTiket" />
-            <JFXDatePicker fx:id="dtpPulang" disable="true" layoutX="194.0" layoutY="117.0" promptText="Tanggal Kepulangan" />
+            <JFXDatePicker fx:id="dtpPulang" disable="true" layoutX="194.0" layoutY="117.0" onAction="#handlerDateException" promptText="Tanggal Kepulangan" />
             <JFXComboBox fx:id="cboTiketDewasa" layoutX="392.0" layoutY="35.0" prefHeight="25.0" prefWidth="13.0">
                <items>
                   <FXCollections fx:factory="observableArrayList">
