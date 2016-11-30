@@ -35,7 +35,7 @@ public class ControllerUtama {
     private JFXRadioButton rbPP, rbSekali;
 
     @FXML
-    public void handleBtnSearch() throws EmptyPropertyException{
+    public void handleBtnSearch(){
         try{
             if(dtpPergi.getValue() == null || dtpPulang.getValue() == null){
                 throw new EmptyPropertyException();
