@@ -60,7 +60,7 @@
                   <String fx:value="JAKARTA (JKT)" />
                </value>
             </JFXComboBox>
-            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0">
+            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0" promptText="Tujuan">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="AMBON (AMQ)" />
@@ -97,11 +97,6 @@
                      <String fx:value="UJUNG PANDANG/MAKASSAR (UPG)" />
                   </FXCollections>
                </items>
-
-               <value>
-                  <String fx:value="Tujuan" />
-               </value>
-
             </JFXComboBox>
             <JFXDatePicker fx:id="dtpPergi" layoutX="194.0" layoutY="49.0" promptText="Tanggal Keberangkatan" />
             <Label layoutX="204.0" layoutY="28.0" text="Tanggal" textFill="WHITE" />
