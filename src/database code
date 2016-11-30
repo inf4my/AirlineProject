@@ -22,7 +22,11 @@ CREATE TABLE penerbangan(
 
 INSERT INTO customer(firstName, lastName, email, phoneNumber, username, password)
 VALUES
-    ("Admin","Admin","admin@gmail.com","081285142488","admin","8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
+    ("Aldo","Febrian","aldo.febrian@student.umn.ac.id","085108472626","aldofebrian","d10212f9972d78ab38d0452dd4702e7ac8df2e482ec2630c52f33020053543ef"),
+    ("Kevin","Lionery","aldo.febrian@student.umn.ac.id","085108472626","aldoaldo56","d10212f9972d78ab38d0452dd4702e7ac8df2e482ec2630c52f33020053543ef"),
+    ("Naufal","Irvan","aldo.febrian@student.umn.ac.id","085108472626","aldoaldo56","d10212f9972d78ab38d0452dd4702e7ac8df2e482ec2630c52f33020053543ef"),
+    ("Taksu","Wijaya","aldo.febrian@student.umn.ac.id","085108472626","aldoaldo56","d10212f9972d78ab38d0452dd4702e7ac8df2e482ec2630c52f33020053543ef"),
+    ("Aldo","Febrian","aldo.febrian@student.umn.ac.id","085108472626","aldoaldo56","d10212f9972d78ab38d0452dd4702e7ac8df2e482ec2630c52f33020053543ef");
 
 //jakarta CKG
 //bandung BDO
