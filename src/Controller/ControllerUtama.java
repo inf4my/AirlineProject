@@ -31,7 +31,7 @@ public class ControllerUtama {
     private ToggleGroup jenisTiket;
 
     @FXML
-    public void handleBtnSearch() throws EmptyPropertyException{
+    public void handleBtnSearch(){
         try{
             if(dtpPergi.getValue() == null || dtpPulang.getValue() == null){
                 throw new EmptyPropertyException();

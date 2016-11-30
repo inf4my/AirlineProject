@@ -12,13 +12,4 @@ public class EmptyPropertyException extends Exception{
     public EmptyPropertyException(String message){
         super(message);
     }
-
-    public void periksaSemua(){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error pada input");
-        alert.setHeaderText("Masalah pada input");
-        alert.setContentText("Periksa kembali tujuan, tanggal, dan tiket dewasa ");
-
-        alert.showAndWait();
-    }
 }
