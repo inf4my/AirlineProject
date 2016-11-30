@@ -11,11 +11,37 @@ import Exception.*;
  * Created by GDC on 11/24/16.
  */
 public class Customer{
-    private String fname;
-    private String lname;
+    private String fName;
+    private String lName;
+    private String email;
+    private String phoneNumber;
     private String username;
     private String password;
     private MessageDigest digest;
+
+    public String getfName(){
+        return fName;
+    }
+
+    public String getlName(){
+        return lName;
+    }
+
+    public String getEmail(){
+        return getEmail();
+    }
+
+    public String getPhoneNumber(){
+        return getPhoneNumber();
+    }
+
+    public String getUsername(){
+        return username;
+    }
+
+    public String getPassword(){
+        return password;
+    }
 
     private String hash(String strToHash){
         try{
@@ -29,14 +55,18 @@ public class Customer{
         }
     }
 
-    public Customer(String fname, String lname, String username, String password)throws EmptyPropertyException{
-        if(fname.equals("")) throw new EmptyPropertyException("Firstname field is required");
-        if(lname.equals("")) throw new EmptyPropertyException("Lastname field is required");
+    public Customer(String fName, String lName, String email, String phoneNumber, String username, String password)throws EmptyPropertyException{
+        if(fName.equals("")) throw new EmptyPropertyException("Firstname field is required");
+        if(lName.equals(""))  throw new EmptyPropertyException("LastName field is required");
+        if(email.equals(""))  throw new EmptyPropertyException("Email field is required");
+        if(phoneNumber.equals(""))  throw new EmptyPropertyException("Phone Number field is required");
         if(username.equals("")) throw new EmptyPropertyException("Username field is required");
         if(password.equals("")) throw new EmptyPropertyException("Password field is required");
 
-        this.fname=fname;
-        this.lname=lname;
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
         this.username=username;
         this.password=hash(password);
     }

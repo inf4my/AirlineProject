@@ -6,18 +6,23 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerSignUp">
    <children>
-      <Label layoutX="96.0" layoutY="68.0" text="Nama Lengkap" />
-      <Label layoutX="96.0" layoutY="115.0" text="Nama Akun" />
-      <Label layoutX="96.0" layoutY="166.0" text="Kata Sandi" />
-      <JFXTextField layoutX="218.0" layoutY="61.0" />
-      <JFXTextField layoutX="218.0" layoutY="108.0" />
-      <JFXPasswordField layoutX="218.0" layoutY="159.0" />
-      <JFXButton layoutX="96.0" layoutY="261.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #ff3300;" text="Batal" />
-      <JFXButton layoutX="264.0" layoutY="261.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #6666ff;" text="Daftar" />
-      <Label layoutX="96.0" layoutY="213.0" text="Ulang Kata Sandi" />
-      <JFXPasswordField layoutX="218.0" layoutY="206.0" />
+      <Label layoutX="76.0" layoutY="28.0" text="Nama Depan" />
+      <Label layoutX="76.0" layoutY="186.0" text="Nama Akun" />
+      <Label layoutX="76.0" layoutY="224.0" text="Kata Sandi" />
+      <JFXTextField fx:id="txtNamaLengkap" layoutX="198.0" layoutY="21.0" />
+      <JFXTextField fx:id="txtNamaAkun" layoutX="198.0" layoutY="179.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="198.0" layoutY="217.0" />
+      <JFXButton layoutX="76.0" layoutY="319.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #ff3300;" text="Batal" />
+      <JFXButton layoutX="244.0" layoutY="319.0" onAction="#handleBtnDaftar" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #6666ff;" text="Daftar" />
+      <Label layoutX="76.0" layoutY="271.0" text="Ulang Kata Sandi" />
+      <JFXPasswordField fx:id="txtPasswordUlang" layoutX="198.0" layoutY="264.0" />
+      <Label layoutX="77.0" layoutY="68.0" text="Nama Belakang" />
+      <JFXTextField layoutX="198.0" layoutY="61.0" />
+      <Label layoutX="77.0" layoutY="110.0" text="Alamat Email" />
+      <JFXTextField layoutX="198.0" layoutY="103.0" />
+      <Label layoutX="77.0" layoutY="146.0" text="Nomor Telepon" />
+      <JFXTextField layoutX="198.0" layoutY="139.0" />
    </children>
 </AnchorPane>
