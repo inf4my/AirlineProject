@@ -3,8 +3,8 @@ CREATE DATABASE dummy;
 CREATE TABLE customer(
 	username varchar(255) PRIMARY KEY,
 	password varchar(255),
-	name varchar(255),
-)
+	name varchar(255)
+);
 
 CREATE TABLE penerbangan(
 	kodePenerbangan varchar(10) PRIMARY KEY,
@@ -14,13 +14,13 @@ CREATE TABLE penerbangan(
 	waktuPulang varchar(255),
 	transit1 varchar(255),
     transit2 varchar(255),
-    harga int,
-)
+    harga int
+);
 
-INSERT INTO customer VALUES(
+INSERT INTO customer(username, password, name)
+VALUES
     ("admin","8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918","Administrator"),
-    ("aldoaldo56","7722aba40e28d98f1440213fb4a13b66ff1c48b32ecd6c9b836221628f21e158","Aldo Febrian")
-)
+    ("aldoaldo56","7722aba40e28d98f1440213fb4a13b66ff1c48b32ecd6c9b836221628f21e158","Aldo Febrian");
 
 //jakarta CKG
 //bandung BDO
@@ -28,7 +28,7 @@ INSERT INTO customer VALUES(
 //narita NRT
 //haneda HND
 
-INSERT INTO penerbangan VALUES(
+INSERT INTO penerbangan VALUES
     ("CGKBDO01","Jakarta","Bandung","201612010800","201612011000",null,null,100000),
     ("CGKBDO02","Jakarta","Bandung","201612011400","201612011600",null,null,100000),
     ("CGKDPS01","Jakarta","Denpasar","201612010900","201612011600","Bandung",null,200000),
@@ -36,5 +36,4 @@ INSERT INTO penerbangan VALUES(
     ("CGKNRT01","Jakarta","Narita","201612010500","201612011030",null,null,550000),
     ("CGKNRT02","Jakarta","Narita","201612010700","201612011230",null,null,500000),
     ("CGKHND01","Jakarta","Haneda","201612010700","201612011230",null,null,650000),
-    ("CGKHND02","Jakarta","Haneda","201612010500","201612011030",null,null,500000),
-)
+    ("CGKHND02","Jakarta","Haneda","201612010500","201612011030",null,null,500000);
