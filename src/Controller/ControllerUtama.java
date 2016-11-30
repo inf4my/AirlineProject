@@ -14,6 +14,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import Exception.EmptyPropertyException;
 
+import java.time.LocalDate;
+
 public class ControllerUtama {
 
     @FXML
@@ -26,6 +28,9 @@ public class ControllerUtama {
     private JFXDatePicker dtpPergi, dtpPulang;
 
     @FXML
+    private LocalDate datepergi, datepulang;
+
+    @FXML
     private JFXComboBox<java.lang.String> cboTiketDewasa, cboTiketAnak, cboTiketBayi;
 
     @FXML
@@ -33,6 +38,11 @@ public class ControllerUtama {
 
     @FXML
     private JFXRadioButton rbPP, rbSekali;
+
+    @FXML public void initialize(){
+        datepergi = LocalDate.now();
+        dtpPergi.setValue(datepergi);
+    }
 
     @FXML
     public void handleBtnSearch(){
@@ -59,7 +69,7 @@ public class ControllerUtama {
             */
         }
         catch (EmptyPropertyException e){
-            e.periksaSemua();
+            e.printStackTrace();
         }
         catch (Exception e){
             e.printStackTrace();
