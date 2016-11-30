@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
-</Pane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="96.0" layoutY="68.0" text="Nama Lengkap" />
+      <Label layoutX="96.0" layoutY="115.0" text="Nama Akun" />
+      <Label layoutX="96.0" layoutY="166.0" text="Kata Sandi" />
+      <JFXTextField layoutX="218.0" layoutY="61.0" />
+      <JFXTextField layoutX="218.0" layoutY="108.0" />
+      <JFXPasswordField layoutX="218.0" layoutY="159.0" />
+      <JFXButton layoutX="96.0" layoutY="261.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #ff3300;" text="Batal" />
+      <JFXButton layoutX="264.0" layoutY="261.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #6666ff;" text="Daftar" />
+      <Label layoutX="96.0" layoutY="213.0" text="Ulang Kata Sandi" />
+      <JFXPasswordField layoutX="218.0" layoutY="206.0" />
+   </children>
+</AnchorPane>
