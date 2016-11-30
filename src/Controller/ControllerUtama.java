@@ -7,13 +7,16 @@ import com.jfoenix.controls.JFXRadioButton;
 import com.sun.org.apache.xpath.internal.operations.String;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.ParentBuilder;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import Exception.DateException;
 
+import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 
 public class ControllerUtama {
@@ -41,8 +44,8 @@ public class ControllerUtama {
 
     @FXML public void initialize(){
         datepergi = LocalDate.now();
+        datepulang = LocalDate.now();
         dtpPergi.setValue(datepergi);
-
         dtpPulang.setDisable(false);
     }
 
@@ -57,9 +60,6 @@ public class ControllerUtama {
             dtpPulang.setDisable(false);
         }
     }
-
-
-
 
     @FXML
     public void handleBtnSearch(){
@@ -93,7 +93,7 @@ public class ControllerUtama {
         }
     }
 
-    public void handleButtonSignUp(){
+    public void handleButtonSignUp() {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
             Parent entryForm = loader.load();
@@ -105,6 +105,13 @@ public class ControllerUtama {
             /*SignUpController signUpController = (SignUpController) loader.getController();
             signUpController.setLstOfUser(lstOfUser);
             */
+            /*
+            Parent root = FXMLLoader.load(getClass().getResource("signUp.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            stage.setTitle("Searching Flight");
+            stage.setScene(new Scene(root, 800, 600));
+            stage.show();*/
         }
         catch (Exception e){
             e.printStackTrace();
@@ -126,4 +133,16 @@ public class ControllerUtama {
             e.printStackTrace();
         }
     }
+
+    @FXML void handlerDateException(){
+        if(dtpPergi.getValue().isAfter(dtpPulang.getValue())){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Date");
+            alert.setHeaderText("Date Error");
+            alert.setContentText("Tanggal Berangkat Lebih besar dari tanggal pergi");
+            alert.showAndWait();
+            dtpPulang.setValue(LocalDate.now());
+        }
+    }
+
 }
