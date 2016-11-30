@@ -4,6 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
@@ -32,5 +36,22 @@ public class ControllerMasuk {
 
     }
 
+    @FXML
+    public void handleBtnDaftar(){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
+            Parent entryForm = loader.load();
+            Stage entryStage = new Stage();
+            entryStage.setTitle("Pendaftaran");
+            entryStage.setScene(new Scene(entryForm, 800,600));
+            entryStage.show();
+            entryStage.requestFocus();
 
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
+
+}
