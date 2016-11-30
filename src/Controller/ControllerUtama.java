@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-import Exception.EmptyPropertyException;
+import Exception.DateException;
 
 import java.time.LocalDate;
 
@@ -48,14 +48,14 @@ public class ControllerUtama {
     public void handleBtnSearch(){
         try{
             if(dtpPergi.getValue() == null || dtpPulang.getValue() == null){
-                throw new EmptyPropertyException();
+                throw new DateException();
             }
-            if(cboTujuan.getValue().equals("Tujuan")){
+            /*if(cboTujuan.getValue().equals("Tujuan")){
                 throw new EmptyPropertyException();
             }
             if(cboTiketDewasa.getValue().equals("0")){
                 throw new EmptyPropertyException();
-            }
+            }*/
             //System.out.println(cboTujuan.getValue());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("searchFlight.fxml"));
             Parent entryForm = loader.load();
@@ -68,8 +68,8 @@ public class ControllerUtama {
             signUpController.setLstOfUser(lstOfUser);
             */
         }
-        catch (EmptyPropertyException e){
-            e.printStackTrace();
+        catch (DateException e){
+            e.periksaTanggal();
         }
         catch (Exception e){
             e.printStackTrace();
@@ -88,6 +88,22 @@ public class ControllerUtama {
             /*SignUpController signUpController = (SignUpController) loader.getController();
             signUpController.setLstOfUser(lstOfUser);
             */
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleBtnLogin(){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("masuk.fxml"));
+            Parent entryForm = loader.load();
+            Stage entryStage = new Stage();
+            entryStage.setTitle("Masuk");
+            entryStage.setScene(new Scene(entryForm, 360,319));
+            entryStage.show();
+            entryStage.requestFocus();
         }
         catch (Exception e){
             e.printStackTrace();
