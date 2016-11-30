@@ -22,8 +22,7 @@ CREATE TABLE penerbangan(
 
 INSERT INTO customer(firstName, lastName, email, phoneNumber, username, password)
 VALUES
-    ("Admin","Admin","admin@gmail.com","081285142488","admin","8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"),
-    ("Aldo","Febrian","aldo@gdc.com","089123456789","aldoaldo56","7722aba40e28d98f1440213fb4a13b66ff1c48b32ecd6c9b836221628f21e158");
+    ("Admin","Admin","admin@gmail.com","081285142488","admin","8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
 
 //jakarta CKG
 //bandung BDO
