@@ -47,6 +47,7 @@ public class ControllerMasuk {
     }
 
     public void handleBtnMasuk() throws Exception{
+        //udh bs
         //Customer customer = null;
         String usernameIn = txtUsername.getText();
         String pass = txtPassword.getText();
