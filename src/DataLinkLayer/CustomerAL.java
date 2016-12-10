@@ -71,6 +71,7 @@ public class CustomerAL {
     //Get User for Login
     public void getUser(String usernameIn, String passwordIn){
         if(connect()){
+            String firstName = null;
             boolean isAvailable = false;
             String q = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username='"+usernameIn+"' AND password='"+passwordIn+"';";
             System.out.println(q);
@@ -95,10 +96,11 @@ public class CustomerAL {
 
                 else{
                     System.out.println("Data ada");
+                    //String firstName='';
                     while(resultSet.next()){
                         //Customer customer = null;
 
-                        String firstName = resultSet.getString("firstName");
+                        firstName = resultSet.getString("firstName");
                         //System.out.println(firstName);
                         String lastName = resultSet.getString("lastName");
                         String email = resultSet.getString("email");
@@ -106,7 +108,16 @@ public class CustomerAL {
                         String username = resultSet.getString("username");
                         String password = resultSet.getString("password");
 
+
+
                     }
+                   /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Login Berhasil");
+                    alert.setHeaderText("Hallo, ");
+                    alert.setContentText("Silahkan bertransaksi");
+                    alert.showAndWait(); */
+                    ControllerMasuk controllerMasuk = new ControllerMasuk();
+                    controllerMasuk.set(firstName);
 
                 }
 

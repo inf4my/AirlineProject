@@ -46,6 +46,15 @@ public class ControllerMasuk {
             return "";
         }
     }
+    private String firstName;
+    private String lastName;
+    public void set(String f){
+        firstName = f;
+    }
+
+    public String get(){
+        return firstName;
+    }
 
     public void handleBtnMasuk() throws Exception{
         //udh bs
@@ -57,7 +66,8 @@ public class ControllerMasuk {
         //customer.login(usernameIn, passwordIn);
         CustomerAL check = new CustomerAL();
         check.getUser(usernameIn,passwordIn);
-
+        String a = get();
+        System.out.println(a); //masih belum bisa ngoper yang di select
 
     }
 
