@@ -1,6 +1,7 @@
 package DataLinkLayer;
 
 import BusinessLayer.Customer;
+import Controller.ControllerMasuk;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -77,10 +78,12 @@ public class CustomerAL {
                 statement = connection.prepareStatement(q);
                 ResultSet resultSet = statement.executeQuery();
                 System.out.println("bisa");
+
                 while(resultSet.next()){
-                    Customer customer = null;
+                    //Customer customer = null;
 
                     String firstName = resultSet.getString("firstName");
+                    //System.out.println(firstName);
                     String lastName = resultSet.getString("lastName");
                     String email = resultSet.getString("email");
                     String phoneNumber = resultSet.getString("phoneNumber");
@@ -88,6 +91,7 @@ public class CustomerAL {
                     String password = resultSet.getString("password");
 
                 }
+
             }
             catch (Exception e){
                 System.out.println("ga bisa");
