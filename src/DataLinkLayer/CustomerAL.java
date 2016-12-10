@@ -2,6 +2,7 @@ package DataLinkLayer;
 
 import BusinessLayer.Customer;
 import Controller.ControllerMasuk;
+import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,32 +71,55 @@ public class CustomerAL {
     //Get User for Login
     public void getUser(String usernameIn, String passwordIn){
         if(connect()){
+            boolean isAvailable = false;
             String q = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username='"+usernameIn+"' AND password='"+passwordIn+"';";
             System.out.println(q);
             PreparedStatement statement = null;
 
             try{
                 statement = connection.prepareStatement(q);
-                ResultSet resultSet = statement.executeQuery();
-                System.out.println("bisa");
+                //statement = (PreparedStatement) connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(q);
 
-                while(resultSet.next()){
-                    //Customer customer = null;
+                if(resultSet.absolute(1)){
+                    isAvailable = true;
+                }else{
+                    isAvailable = false;
+                }
 
-                    String firstName = resultSet.getString("firstName");
-                    //System.out.println(firstName);
-                    String lastName = resultSet.getString("lastName");
-                    String email = resultSet.getString("email");
-                    String phoneNumber = resultSet.getString("phoneNumber");
-                    String username = resultSet.getString("username");
-                    String password = resultSet.getString("password");
+                System.out.println(isAvailable);
+
+                if(isAvailable == false){
+                    throw new Exception();
+                }
+
+                else{
+                    System.out.println("Data ada");
+                    while(resultSet.next()){
+                        //Customer customer = null;
+
+                        String firstName = resultSet.getString("firstName");
+                        //System.out.println(firstName);
+                        String lastName = resultSet.getString("lastName");
+                        String email = resultSet.getString("email");
+                        String phoneNumber = resultSet.getString("phoneNumber");
+                        String username = resultSet.getString("username");
+                        String password = resultSet.getString("password");
+
+                    }
 
                 }
 
+
             }
             catch (Exception e){
-                System.out.println("ga bisa");
-                e.printStackTrace();
+                System.out.println("Data tidak ada");
+                //e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Incorrect Username/Password");
+                alert.setHeaderText("Username/Password Anda Salah");
+                alert.setContentText("Silahkan periksa kembali input Anda");
+                alert.showAndWait();
             }
             finally {
                 try{
