@@ -69,15 +69,14 @@ public class CustomerAL {
     //Get User for Login
     public void getUser(String usernameIn, String passwordIn){
         if(connect()){
-            String query = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username="+usernameIn+" AND password="+passwordIn+";";
-            System.out.println(query);
+            String q = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username='"+usernameIn+"' AND password='"+passwordIn+"';";
+            System.out.println(q);
             PreparedStatement statement = null;
 
-
             try{
-                statement = connection.prepareStatement(query);
+                statement = connection.prepareStatement(q);
                 ResultSet resultSet = statement.executeQuery();
-
+                System.out.println("bisa");
                 while(resultSet.next()){
                     Customer customer = null;
 
@@ -106,6 +105,8 @@ public class CustomerAL {
                 }
             }
         }
-        return;
+       // return;
     }
+
+
 }
