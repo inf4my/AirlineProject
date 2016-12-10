@@ -98,8 +98,8 @@ public class ControllerUtama {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
-            entryStage.setTitle("Searching Flight");
-            entryStage.setScene(new Scene(entryForm, 800,600));
+            entryStage.setTitle("Pendaftaran");
+            entryStage.setScene(new Scene(entryForm, 489,357));
             entryStage.show();
             entryStage.requestFocus();
             /*SignUpController signUpController = (SignUpController) loader.getController();

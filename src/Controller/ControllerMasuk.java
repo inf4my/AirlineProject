@@ -1,5 +1,7 @@
 package Controller;
 
+import BusinessLayer.Customer;
+import DataLinkLayer.CustomerAL;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -21,19 +23,39 @@ public class ControllerMasuk {
     JFXButton btnBatal;
 
     @FXML
-    JFXTextField txtNamaakun;
+    JFXTextField txtUsername;
 
     @FXML
-    JFXPasswordField passAkun;
+    JFXPasswordField txtPassword;
 
     public void handleBtnBatal(){
         btnBatal.getScene().getWindow().hide();
     }
 
-    public void handleBtnMasuk(){
-        String username = txtNamaakun.getText();
-        String password = passAkun.getText();
+    private MessageDigest digest;
 
+    private String hash(String strToHash){
+        try{
+            digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(strToHash.getBytes(StandardCharsets.UTF_8));
+            return DatatypeConverter.printHexBinary(hash);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+            return "";
+        }
+    }
+
+    public void handleBtnMasuk() throws Exception{
+        Customer customer = null;
+        String usernameIn = txtUsername.getText();
+        String pass = txtPassword.getText();
+        String passwordIn = hash(pass);
+        //System.out.println(passwordIn);
+        customer.login(usernameIn, passwordIn);
+        CustomerAL check = new CustomerAL();
+        check.getUser(usernameIn,passwordIn);
+        
     }
 
     @FXML
@@ -43,7 +65,7 @@ public class ControllerMasuk {
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
             entryStage.setTitle("Pendaftaran");
-            entryStage.setScene(new Scene(entryForm, 800,600));
+            entryStage.setScene(new Scene(entryForm,489,357));
             entryStage.show();
             entryStage.requestFocus();
 
