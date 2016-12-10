@@ -69,7 +69,7 @@ public class CustomerAL {
     //Get User for Login
     public void getUser(String usernameIn, String passwordIn){
         if(connect()){
-            String query = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHEN username="+usernameIn+" AND password="+passwordIn+";";
+            String query = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username="+usernameIn+" AND password="+passwordIn+";";
             System.out.println(query);
             PreparedStatement statement = null;
 
