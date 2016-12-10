@@ -47,7 +47,7 @@ public class ControllerMasuk {
         }
     }
     private String firstName;
-    private String lastName;
+
     public void set(String f){
         firstName = f;
     }
