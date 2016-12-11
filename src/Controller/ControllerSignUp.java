@@ -21,7 +21,7 @@ public class ControllerSignUp {
     @FXML
     JFXPasswordField txtPassword, txtPasswordUlang;
 
-    /*@FXML
+    @FXML
     public void handleBtnDaftar() throws EmptyPropertyException {
         if (!txtPassword.getText().toString().equals(txtPasswordUlang.getText().toString())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -36,5 +36,5 @@ public class ControllerSignUp {
         CustomerAL input = new CustomerAL();
         input.insertUser(user.getfName(), user.getlName(), user.getEmail(), user.getPhoneNumber(), user.getUsername(), user.getPassword());
 
-    }*/
+    }
 }
