@@ -1,0 +1,3 @@
+SELECT * FROM penerbangan where keberangkatan="" AND tujuan="";
+
+SELECT * FROM customer where username="";
