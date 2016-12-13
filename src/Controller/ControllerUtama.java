@@ -74,6 +74,15 @@ public class ControllerUtama {
             if(dtpPulang.isDisable()==false && dtpPulang.getValue() == null || dtpPulang.isDisable()==false && cboTujuan.getValue() == null || dtpPulang.isDisable()==false && cboTujuan.getValue() == null && dtpPulang.getValue() == null || cboTujuan.getValue() == null){
                 throw new DateException();
             }
+            if(user.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Kesalahan");
+                alert.setHeaderText("Masalah pada akun");
+                alert.setContentText("Harap masuk ke akun anda terlebih dahulu");
+
+                alert.showAndWait();
+                return;
+            }
             /*if(cboTujuan.getValue().equals("Tujuan")){
                 throw new EmptyPropertyException();
             }
@@ -165,6 +174,7 @@ public class ControllerUtama {
     }
 
     @FXML void handleBtnKeluar(){
+        user.remove(0);
         btnSdhMsk.setVisible(false);
         btnLogin.setVisible(true);
         btnSignUp.setVisible(true);
