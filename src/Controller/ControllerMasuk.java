@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
 import javafx.stage.Stage;
 
 import javax.xml.bind.DatatypeConverter;
@@ -25,7 +27,10 @@ public class ControllerMasuk {
     Customer temp;
 
     @FXML
-    JFXButton btnBatal, btnMasuk, btnLogin;
+    JFXButton btnBatal, btnMasuk, btnLogin, btnSignUp;
+
+    @FXML
+    MenuButton btnSdhMsk;
 
     @FXML
     JFXTextField txtUsername;
@@ -34,9 +39,12 @@ public class ControllerMasuk {
     JFXPasswordField txtPassword;
 
 
-    public void operObjek(ArrayList<Customer> user, JFXButton btnOper){
+
+    public void operObjek(ArrayList<Customer> user, JFXButton btnOper, JFXButton btnOper2, MenuButton btnSdhMsk){
         this.user = user;
         this.btnLogin = btnOper;
+        this.btnSignUp = btnOper2;
+        this.btnSdhMsk = btnSdhMsk;
     }
 
     public void handleBtnBatal(){
@@ -57,9 +65,13 @@ public class ControllerMasuk {
         }
     }
 
-    public void gantiText(JFXButton btnLogin){
-        this.btnLogin.setText(user.get(0).getUsername());
+    public void hidden(JFXButton btnLogin, JFXButton btnSignUp, MenuButton btnSdhMsk){
+        this.btnLogin.setVisible(false);
+        this.btnSignUp.setVisible(false);
+        this.btnSdhMsk.setVisible(true);
+        this.btnSdhMsk.setText(txtUsername.getText());
     }
+
 
     public void handleBtnMasuk() throws Exception{
         String usernameIn = txtUsername.getText();
@@ -75,7 +87,7 @@ public class ControllerMasuk {
             //System.out.println("uvuvwevwe");
             user.add(temp);
             btnMasuk.getScene().getWindow().hide();
-            gantiText(btnLogin);
+            hidden(btnLogin,btnSignUp,btnSdhMsk);
         }
         else{
             System.out.println("wualah");

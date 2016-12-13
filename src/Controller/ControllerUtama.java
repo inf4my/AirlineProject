@@ -13,7 +13,9 @@ import javafx.scene.Parent;
 import javafx.scene.ParentBuilder;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import Exception.DateException;
 
@@ -25,6 +27,9 @@ public class ControllerUtama {
     ArrayList<Customer> user = new ArrayList<Customer>();
     @FXML
     private JFXButton btnSearch, btnLogin, btnSignUp;
+
+    @FXML
+    private MenuButton btnSdhMsk;
 
     @FXML
     private JFXComboBox<java.lang.String> cboAsal, cboTujuan, cboKelasPenerbangan;
@@ -83,6 +88,7 @@ public class ControllerUtama {
             entryStage.setScene(new Scene(entryForm, 1200,720));
             entryStage.show();
             entryStage.requestFocus();
+            entryStage.getIcons().add(new Image(this.getClass().getResource("search.png").toString()));
             /*SignUpController signUpController = (SignUpController) loader.getController();
             signUpController.setLstOfUser(lstOfUser);
             */
@@ -105,6 +111,7 @@ public class ControllerUtama {
             entryStage.setScene(new Scene(entryForm, 454,426));
             entryStage.show();
             entryStage.requestFocus();
+            entryStage.getIcons().add(new Image(this.getClass().getResource("signup.png").toString()));
             ControllerSignUp controllerdaftrar = (ControllerSignUp) loader.getController();
             controllerdaftrar.operObjek(user);
             /*SignUpController signUpController = (SignUpController) loader.getController();
@@ -133,8 +140,9 @@ public class ControllerUtama {
             entryStage.setScene(new Scene(entryForm, 360,319));
             entryStage.show();
             entryStage.requestFocus();
+            entryStage.getIcons().add(new Image(this.getClass().getResource("login.png").toString()));
             ControllerMasuk loginController = (ControllerMasuk) loader.getController();
-            loginController.operObjek(user, btnLogin);
+            loginController.operObjek(user, btnLogin, btnSignUp, btnSdhMsk);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -150,6 +158,12 @@ public class ControllerUtama {
             alert.showAndWait();
             dtpPulang.setValue(LocalDate.now());
         }
+    }
+
+    @FXML void handleBtnKeluar(){
+        btnSdhMsk.setVisible(false);
+        btnLogin.setVisible(true);
+        btnSignUp.setVisible(true);
     }
 
 
