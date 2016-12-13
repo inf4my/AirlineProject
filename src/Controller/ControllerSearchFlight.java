@@ -22,13 +22,13 @@ import java.util.List;
  */
 public class ControllerSearchFlight {
     @FXML
-    Label lblPB, lblPS, lblPD, lblPT, lblWaktuPergi, lblWaktuSampai, lblDetailSampai, lblDetailPergi;
+    Label lblPB, lblPS, lblPD, lblPT, lblWaktuPergi, lblWaktuSampai, lblDetailSampai, lblDetailPergi, lblRaja;
     @FXML
     TableView<Penerbangan> tblBerangkat;
     @FXML
     TableColumn colTujuan, colBerangkat, colSampai, colTransit;
     @FXML
-    ImageView Icon;
+    ImageView Icon, Icon2;
     @FXML
     AnchorPane achDetail, achPergi;
     @FXML
@@ -45,6 +45,7 @@ public class ControllerSearchFlight {
         }
     }
     public void initialize(){
+        blmPilih();
         lstOfPenerbangan = FlightAL.getAllPenerbangan();
         filter();
         colBerangkat.setCellValueFactory(new PropertyValueFactory<Penerbangan, LocalDateTime>("waktuBerangkat"));
@@ -56,9 +57,40 @@ public class ControllerSearchFlight {
             System.out.println(x.getKeberangkatan()+ " - " + x.getWaktuBerangkat() + " - " + x.getWaktuPulang() + " - "+ x.getHarga());
         }*/
     }
+    public void blmPilih(){
+        tblBerangkat.setLayoutY(360);
+        tblBerangkat.setPrefHeight(341);
+        tabBerangkat.setPrefHeight(44);
+        Icon.setVisible(false);
+        lblRaja.setVisible(false);
+        lblPB.setVisible(false);
+        lblPS.setVisible(false);
+        lblPD.setVisible(false);
+        lblPT.setVisible(false);
+        Icon2.setVisible(true);
+    }
+    protected void pilih(){
+        tblBerangkat.setLayoutY(498);
+        tblBerangkat.setPrefHeight(185);
+        tabBerangkat.setPrefHeight(155);
+        Icon.setVisible(true);
+        lblRaja.setVisible(true);
+        lblPB.setVisible(true);
+        lblPS.setVisible(true);
+        lblPD.setVisible(true);
+        lblPT.setVisible(true);
+        Icon2.setVisible(false);
+    }
     @FXML
-    protected void handlePick(){
+    public void handleLook(){
+        blmPilih();
+    }
+    @FXML
+    public void handlePick(){
+        pilih();
         Penerbangan hightlight = tblBerangkat.getSelectionModel().getSelectedItem();
+        Icon.setVisible(true);
+        lblRaja.setVisible(true);
         System.out.println(hightlight.getWaktuBerangkat().format(DateTimeFormatter.ofPattern("HH:mm")));
         lblPB.setText(hightlight.getWaktuBerangkat().format(DateTimeFormatter.ofPattern("HH:mm")));
         lblPS.setText(hightlight.getWaktuPulang().format(DateTimeFormatter.ofPattern("HH:mm")));
