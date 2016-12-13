@@ -102,7 +102,7 @@ public class ControllerUtama {
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
             entryStage.setTitle("Pendaftaran");
-            entryStage.setScene(new Scene(entryForm, 489,357));
+            entryStage.setScene(new Scene(entryForm, 454,426));
             entryStage.show();
             entryStage.requestFocus();
             ControllerSignUp controllerdaftrar = (ControllerSignUp) loader.getController();
