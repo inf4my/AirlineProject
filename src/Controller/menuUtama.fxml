@@ -9,9 +9,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
    <children>
       <JFXButton fx:id="btnLogin" layoutX="517.0" layoutY="14.0" onAction="#handleBtnLogin" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Masuk" textFill="WHITE" />
       <JFXButton fx:id="btnSignUp" layoutX="655.0" layoutY="14.0" onAction="#handleButtonSignUp" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Pendaftaran Akun" textFill="WHITE" />
@@ -185,5 +187,20 @@
          </children>
       </AnchorPane>
       <JFXButton fx:id="btnSearch" layoutX="655.0" layoutY="552.0" onAction="#handleBtnSearch" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: blue;" text="Cari" textFill="WHITE" />
+      <ImageView fitHeight="265.0" fitWidth="623.0" layoutX="34.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../airplane.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="151.0" fitWidth="247.0" layoutX="548.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pramugari.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="151.0" fitWidth="227.0" layoutX="549.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pilot.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

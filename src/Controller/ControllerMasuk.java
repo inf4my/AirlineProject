@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class ControllerMasuk {
     ArrayList<Customer> user;
     Customer temp;
-    private String firstName;
+
     @FXML
     JFXButton btnBatal, btnMasuk;
 
@@ -56,14 +56,7 @@ public class ControllerMasuk {
         }
     }
 
-    public void set(String f){
-        this.firstName = f;
-        //System.out.println(firstName);
-    }
 
-    public String getFirstName(){
-        return firstName;
-    }
 
     public void handleBtnMasuk() throws Exception{
         String usernameIn = txtUsername.getText();
@@ -72,9 +65,17 @@ public class ControllerMasuk {
         //System.out.println(passwordIn);
         CustomerAL check = new CustomerAL();
         temp = check.getUser(usernameIn,passwordIn);
-        user.add(temp);
-        btnMasuk.getScene().getWindow().hide();
-
+        //user.add(temp);
+        char pen = temp.getStatus();
+        System.out.println(pen);
+        if(pen=='y'){
+            //System.out.println("uvuvwevwe");
+            user.add(temp);
+            btnMasuk.getScene().getWindow().hide();
+        }
+        else{
+            System.out.println("wualah");
+        }
     }
 
     @FXML

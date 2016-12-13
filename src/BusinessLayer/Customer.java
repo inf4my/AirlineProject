@@ -20,6 +20,17 @@ public class Customer{
     private String password;
     private MessageDigest digest;
 
+    private char status;
+
+    public char getStatus(){
+        return this.status;
+    }
+
+    public void setStatus(char s){
+        this.status = s;
+    }
+
+
     public String getfName(){
         return fName;
     }
