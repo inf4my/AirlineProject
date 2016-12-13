@@ -15,11 +15,14 @@ import javafx.stage.Stage;
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 
 /**
  * Created by lionery on 30/11/2016.
  */
 public class ControllerMasuk {
+    ArrayList<Customer> user;
+    Customer temp;
     private String firstName;
     @FXML
     JFXButton btnBatal;
@@ -29,6 +32,10 @@ public class ControllerMasuk {
 
     @FXML
     JFXPasswordField txtPassword;
+
+    public void operObjek(ArrayList<Customer> user){
+        this.user = user;
+    }
 
     public void handleBtnBatal(){
         btnBatal.getScene().getWindow().hide();
@@ -66,9 +73,10 @@ public class ControllerMasuk {
         //System.out.println(passwordIn);
         //customer.login(usernameIn, passwordIn);
         CustomerAL check = new CustomerAL();
-        check.getUser(usernameIn,passwordIn);
+        temp = check.getUser(usernameIn,passwordIn);
+        user.add(temp);
         //String a = get();
-        System.out.println(getFirstName()); //masih belum bisa ngoper yang di select
+        //ystem.out.println(user.getfName()); //masih belum bisa ngoper yang di select
 
     }
 

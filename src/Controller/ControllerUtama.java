@@ -19,9 +19,10 @@ import Exception.DateException;
 
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ControllerUtama {
-    Customer user;
+    ArrayList<Customer> user = new ArrayList<Customer>();
     @FXML
     private JFXButton btnSearch, btnLogin, btnSignUp;
 
@@ -96,6 +97,7 @@ public class ControllerUtama {
 
     public void handleButtonSignUp() {
         try{
+            //System.out.println(user.getUsername());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
@@ -103,6 +105,8 @@ public class ControllerUtama {
             entryStage.setScene(new Scene(entryForm, 489,357));
             entryStage.show();
             entryStage.requestFocus();
+            ControllerSignUp controllerdaftrar = (ControllerSignUp) loader.getController();
+            controllerdaftrar.operObjek(user);
             /*SignUpController signUpController = (SignUpController) loader.getController();
             signUpController.setLstOfUser(lstOfUser);
             */
@@ -130,7 +134,7 @@ public class ControllerUtama {
             entryStage.show();
             entryStage.requestFocus();
             ControllerMasuk loginController = (ControllerMasuk) loader.getController();
-            //loginController.operObjek(user);
+            loginController.operObjek(user);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -147,5 +151,6 @@ public class ControllerUtama {
             dtpPulang.setValue(LocalDate.now());
         }
     }
+
 
 }

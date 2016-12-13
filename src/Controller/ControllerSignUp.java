@@ -11,11 +11,14 @@ import DataLinkLayer.ConnectionConfiguration;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 
+import java.util.ArrayList;
+
 /**
  * Created by inf4my on 11/30/2016.
  */
 public class ControllerSignUp {
-    Customer user;
+    ArrayList<Customer> user;
+    Customer temp;
     @FXML
     JFXTextField txtNamaDepan, txtNamaBelakang, txtEmail, txtNomorTelepon, txtNamaAkun;
 
@@ -24,6 +27,11 @@ public class ControllerSignUp {
 
     @FXML
     JFXPasswordField txtPassword, txtPasswordUlang;
+
+    public void operObjek(ArrayList<Customer> user){
+        this.user = user;
+        System.out.println(this.user.get(0).getUsername());
+    }
 
     @FXML
     public void handleBtnDaftar() throws EmptyPropertyException {
@@ -43,10 +51,12 @@ public class ControllerSignUp {
         else{
             sex = "p";
         }
-        user = new Customer(txtNamaDepan.getText(), txtNamaBelakang.getText(), txtEmail.getText(), sex , txtNomorTelepon.getText(),  txtNamaAkun.getText(), txtPassword.getText());
+        temp = new Customer(txtNamaDepan.getText(), txtNamaBelakang.getText(), txtEmail.getText(), sex , txtNomorTelepon.getText(),  txtNamaAkun.getText(), txtPassword.getText());
         //System.out.println(user.getSex());
         CustomerAL input = new CustomerAL();
-        input.insertUser(user.getfName(), user.getlName(), user.getEmail(), user.getSex(), user.getPhoneNumber(), user.getUsername(), user.getPassword());
+        input.insertUser(temp.getfName(), temp.getlName(), temp.getEmail(), temp.getSex(), temp.getPhoneNumber(), temp.getUsername(), temp.getPassword());
 
     }
+
+
 }
