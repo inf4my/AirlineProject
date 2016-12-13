@@ -1,6 +1,6 @@
 CREATE DATABASE airline;
 
-USE DATABASE airline;
+USE airline;
 
 CREATE TABLE customer(
     firstName varchar(50),
@@ -23,7 +23,7 @@ CREATE TABLE penerbangan(
     harga int
 );
 
-INSERT INTO customer(firstName, lastName, jenisKelamin, email, phoneNumber, username, password)
+INSERT INTO customer(firstName, lastName, email, jenisKelamin, phoneNumber, username, password)
 VALUES
     ("Aldo","Febrian","aldo.febrian@student.umn.ac.id","l","081819202122","aldofebrian","9fb3c55208e14b7de6f483936ee26eecce4f614d4c40324ca42dc9687d4ad363"),
     ("Kevin","Lionery","kevin.lionery@student.umn.ac.id","l","081213141516","kevinlionery","9fb3c55208e14b7de6f483936ee26eecce4f614d4c40324ca42dc9687d4ad363"),

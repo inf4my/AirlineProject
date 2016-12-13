@@ -1,5 +1,6 @@
 package Controller;
 
+import BusinessLayer.Customer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -20,7 +21,7 @@ import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 
 public class ControllerUtama {
-
+    Customer user;
     @FXML
     private JFXButton btnSearch, btnLogin, btnSignUp;
 
@@ -128,6 +129,8 @@ public class ControllerUtama {
             entryStage.setScene(new Scene(entryForm, 360,319));
             entryStage.show();
             entryStage.requestFocus();
+            ControllerMasuk loginController = (ControllerMasuk) loader.getController();
+            //loginController.operObjek(user);
         }
         catch (Exception e){
             e.printStackTrace();

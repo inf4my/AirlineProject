@@ -71,16 +71,16 @@ public class CustomerAL {
     //Get User for Login
     public void getUser(String usernameIn, String passwordIn){
         if(connect()){
-            String firstName = null;
+           // String firstName = null;
             boolean isAvailable = false;
-            String q = "SELECT firstName, lastName, email, phoneNumber, username, password FROM customer WHERE username='"+usernameIn+"' AND password='"+passwordIn+"';";
+            String q = "SELECT firstName, lastName, jenisKelamin, email, phoneNumber, username, password FROM customer WHERE username='"+usernameIn+"' AND password='"+passwordIn+"';";
             System.out.println(q);
             PreparedStatement statement = null;
 
             try{
                 statement = connection.prepareStatement(q);
                 //statement = (PreparedStatement) connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(q);
+                ResultSet resultSet = statement.executeQuery();
 
                 if(resultSet.absolute(1)){
                     isAvailable = true;
@@ -96,19 +96,19 @@ public class CustomerAL {
 
                 else{
                     System.out.println("Data ada");
+                    //System.out.println("tes");
                     //String firstName='';
                     while(resultSet.next()){
                         //Customer customer = null;
+                        System.out.println("tes");
+                        String firstName = resultSet.getString("firstName");
 
-                        firstName = resultSet.getString("firstName");
-                        //System.out.println(firstName);
                         String lastName = resultSet.getString("lastName");
+                        System.out.println("tes");
                         String email = resultSet.getString("email");
                         String phoneNumber = resultSet.getString("phoneNumber");
                         String username = resultSet.getString("username");
                         String password = resultSet.getString("password");
-
-
 
                     }
                    /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -116,8 +116,8 @@ public class CustomerAL {
                     alert.setHeaderText("Hallo, ");
                     alert.setContentText("Silahkan bertransaksi");
                     alert.showAndWait(); */
-                    ControllerMasuk controllerMasuk = new ControllerMasuk();
-                    controllerMasuk.set(firstName);
+                   // ControllerMasuk controllerMasuk = new ControllerMasuk();
+                    //controllerMasuk.set(firstName);
 
                 }
 

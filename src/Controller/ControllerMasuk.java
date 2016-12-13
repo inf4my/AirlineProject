@@ -66,8 +66,8 @@ public class ControllerMasuk {
         //customer.login(usernameIn, passwordIn);
         CustomerAL check = new CustomerAL();
         check.getUser(usernameIn,passwordIn);
-        String a = get();
-        System.out.println(a); //masih belum bisa ngoper yang di select
+        //String a = get();
+        //System.out.println(a); //masih belum bisa ngoper yang di select
 
     }
 
