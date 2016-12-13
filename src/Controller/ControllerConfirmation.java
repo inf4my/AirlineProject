@@ -1,7 +1,9 @@
 package Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -45,8 +47,9 @@ public class ControllerConfirmation {
         txtTotalBiaya.setText(totalBiaya2);
     }
     @FXML
-    public void handleBtnConfirm(){
+    public void handleBtnConfirm(ActionEvent event){
         try{
+            ((Node)event.getSource()).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("metodeBayar.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
