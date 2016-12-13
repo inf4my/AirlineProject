@@ -71,7 +71,7 @@ public class ControllerUtama {
     @FXML
     public void handleBtnSearch(){
         try{
-            if(dtpPergi.getValue() == null || dtpPulang.getValue() == null){
+            if(dtpPulang.isDisable()==false && dtpPulang.getValue() == null || dtpPulang.isDisable()==false && cboTujuan.getValue() == null || dtpPulang.isDisable()==false && cboTujuan.getValue() == null && dtpPulang.getValue() == null || cboTujuan.getValue() == null){
                 throw new DateException();
             }
             /*if(cboTujuan.getValue().equals("Tujuan")){
