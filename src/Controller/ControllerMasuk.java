@@ -25,7 +25,7 @@ public class ControllerMasuk {
     Customer temp;
 
     @FXML
-    JFXButton btnBatal, btnMasuk;
+    JFXButton btnBatal, btnMasuk, btnLogin;
 
     @FXML
     JFXTextField txtUsername;
@@ -34,8 +34,9 @@ public class ControllerMasuk {
     JFXPasswordField txtPassword;
 
 
-    public void operObjek(ArrayList<Customer> user){
+    public void operObjek(ArrayList<Customer> user, JFXButton btnOper){
         this.user = user;
+        this.btnLogin = btnOper;
     }
 
     public void handleBtnBatal(){
@@ -56,7 +57,9 @@ public class ControllerMasuk {
         }
     }
 
-
+    public void gantiText(JFXButton btnLogin){
+        this.btnLogin.setText(user.get(0).getUsername());
+    }
 
     public void handleBtnMasuk() throws Exception{
         String usernameIn = txtUsername.getText();
@@ -72,6 +75,7 @@ public class ControllerMasuk {
             //System.out.println("uvuvwevwe");
             user.add(temp);
             btnMasuk.getScene().getWindow().hide();
+            gantiText(btnLogin);
         }
         else{
             System.out.println("wualah");
