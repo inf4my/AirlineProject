@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.ParentBuilder;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import Exception.DateException;
@@ -25,6 +26,9 @@ public class ControllerUtama {
     ArrayList<Customer> user = new ArrayList<Customer>();
     @FXML
     private JFXButton btnSearch, btnLogin, btnSignUp;
+
+    @FXML
+    private MenuButton btnSdhMsk;
 
     @FXML
     private JFXComboBox<java.lang.String> cboAsal, cboTujuan, cboKelasPenerbangan;
@@ -134,7 +138,7 @@ public class ControllerUtama {
             entryStage.show();
             entryStage.requestFocus();
             ControllerMasuk loginController = (ControllerMasuk) loader.getController();
-            loginController.operObjek(user, btnLogin);
+            loginController.operObjek(user, btnLogin, btnSignUp, btnSdhMsk);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -150,6 +154,12 @@ public class ControllerUtama {
             alert.showAndWait();
             dtpPulang.setValue(LocalDate.now());
         }
+    }
+
+    @FXML void handleBtnKeluar(){
+        btnSdhMsk.setVisible(false);
+        btnLogin.setVisible(true);
+        btnSignUp.setVisible(true);
     }
 
 

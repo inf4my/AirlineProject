@@ -6,7 +6,10 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
@@ -186,7 +189,7 @@
             <Label layoutX="483.0" layoutY="97.0" prefHeight="17.0" prefWidth="108.0" text="Kelas Penerbangan" />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnSearch" layoutX="655.0" layoutY="552.0" onAction="#handleBtnSearch" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: blue;" text="Cari" textFill="WHITE" />
+      <JFXButton fx:id="btnSearch" layoutX="655.0" layoutY="552.0" onAction="#handleBtnSearch" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Cari" textFill="WHITE" />
       <ImageView fitHeight="265.0" fitWidth="623.0" layoutX="34.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../airplane.png" />
@@ -202,5 +205,11 @@
             <Image url="@../pilot.jpg" />
          </image>
       </ImageView>
+      <ButtonBar layoutX="91.0" layoutY="7.0" prefHeight="40.0" prefWidth="200.0" />
+      <MenuButton fx:id="btnSdhMsk" layoutX="655.0" layoutY="9.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="MenuButton" textFill="WHITE" visible="false">
+        <items>
+          <MenuItem fx:id="btnKeluar" mnemonicParsing="false" onAction="#handleBtnKeluar" text="Keluar" />
+        </items>
+      </MenuButton>
    </children>
 </AnchorPane>
