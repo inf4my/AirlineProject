@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerConfirmation">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerConfirmation">
    <children>
       <Label layoutX="182.0" layoutY="38.0" text="Confirmation">
          <font>
@@ -55,8 +55,8 @@
       <JFXTextField fx:id="txtWaktuSampai" layoutX="243.0" layoutY="292.0" />
       <JFXTextField fx:id="txtKelas" layoutX="243.0" layoutY="341.0" />
       <JFXTextField fx:id="txtTotalBiaya" layoutX="243.0" layoutY="387.0" />
-      <JFXButton fx:id="btnBuy" layoutX="378.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleBtnConfirm" text="BUY" />
-      <JFXButton layoutX="95.0" layoutY="453.0" mnemonicParsing="false" text="Exit" />
+      <JFXButton fx:id="btnBuy" layoutX="378.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleBtnConfirm" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #0277BD;" text="BUY" textFill="WHITE" />
+      <JFXButton fx:id="btnExit" layoutX="95.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleBtnExit" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #FF3300;" text="Exit" textFill="WHITE" />
       <Label layoutX="637.0" layoutY="37.0" text="Confirmation">
          <font>
             <Font size="30.0" />
