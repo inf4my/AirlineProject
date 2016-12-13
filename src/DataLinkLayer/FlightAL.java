@@ -1,6 +1,7 @@
 package DataLinkLayer;
 
 import BusinessLayer.Penerbangan;
+import BusinessLayer.Tiket;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,10 @@ import java.util.List;
 
 /**
  * Created by Naufal on 11/18/2016.
+ *
+ * PLEACE BACA:
+ * UPDATE 1:
+ * 1. FlightAL sudah berfungsi untuk memanggil data yang ada di table penerbangan.
  */
 public class FlightAL {
     private static Connection connection;
@@ -40,38 +45,42 @@ public class FlightAL {
         }
     }
 
-    /*public static List<Penerbangan> getAllEmployee(){
-        List<Penerbangan> employees = new ArrayList<Penerbangan>();
+    public static List<Penerbangan> getAllPenerbangan(){
+        List<Penerbangan> penerbangan = new ArrayList<Penerbangan>();
         if(connect()){
-            String query = "SELECT id, first_name, last_name, pos, email FROM employees;";
+            String query = "SELECT kodePenerbangan, keberangkatan, tujuan, waktuBerangkat, waktuPulang, harga FROM penerbangan;";
             PreparedStatement stmt = null;
             try{
                 stmt = connection.prepareStatement(query);
                 ResultSet rs = stmt.executeQuery();
 
                 while(rs.next()){
-                    Penerbangan employee = null;
+                    Penerbangan penerbanganAmbil = null;
 
-                    int id = rs.getInt("id");
-                    String firstName = rs.getString("first_name");
-                    String lastName = rs.getString("last_name");
-                    String position = rs.getString("pos");
-                    String email = rs.getString("email");
+                    String kodePenerbangan = rs.getString("kodePenerbangan");
+                    String keberangkatan = rs.getString("keberangkatan");
+                    String tujuan = rs.getString("tujuan");
 
-                    switch(position.toLowerCase()){
+                    String waktuBerangkat = rs.getString("waktuBerangkat");
+                    String waktuPulang = rs.getString("waktuPulang");
+                    int harga = rs.getInt("harga");
+
+                    /*switch(position.toLowerCase()){
                         case "manager":
                             employee = new Manager(id, firstName, lastName, position, email);
                             break;
                         case "staff":
                             employee = new Staff(id,firstName, lastName, position,email);
                             break;
-                    }
-                    if(employee != null){
-                        employees.add(employee);
+                    }*/
+                    penerbanganAmbil = new Tiket(keberangkatan, tujuan, kodePenerbangan, waktuBerangkat, waktuPulang, harga);
+                    if(penerbangan != null){
+                        penerbangan.add(penerbanganAmbil);
                     }
                 }
             }
             catch (Exception e){
+                System.out.println("CHECK!");
                 e.printStackTrace();
             }
             finally {
@@ -86,6 +95,7 @@ public class FlightAL {
                 }
             }
         }
-        return employees;
-    }*/
+        System.out.println(penerbangan.size());
+        return penerbangan;
+    }
 }
