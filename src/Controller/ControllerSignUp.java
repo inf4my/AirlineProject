@@ -83,6 +83,12 @@ public class ControllerSignUp {
         //System.out.println(user.getSex());
         CustomerAL input = new CustomerAL();
         input.insertUser(temp.getfName(), temp.getlName(), temp.getEmail(), temp.getSex(), temp.getPhoneNumber(), temp.getUsername(), temp.getPassword());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Dialog Informasi");
+        alert.setHeaderText(null);
+        alert.setContentText("Pendaftaran berhasil");
+
+        alert.showAndWait();
 
     }
 
