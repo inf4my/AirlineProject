@@ -85,13 +85,17 @@ public class ControllerUtama {
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
             entryStage.setTitle("Searching Flight");
-            entryStage.setScene(new Scene(entryForm, 1200,720));
+            entryStage.setScene(new Scene(entryForm, 800,720));
             entryStage.show();
             entryStage.requestFocus();
             entryStage.getIcons().add(new Image(this.getClass().getResource("search.png").toString()));
-            /*SignUpController signUpController = (SignUpController) loader.getController();
-            signUpController.setLstOfUser(lstOfUser);
-            */
+            ControllerSearchFlight signUpController = (ControllerSearchFlight) loader.getController();
+
+            signUpController.initialize(dtpPergi.getValue(), dtpPulang.getValue(), cboTiketDewasa.getValue(), cboTiketAnak.getValue(),
+                    cboTiketBayi.getValue(), cboAsal.getValue(), cboTujuan.getValue(), cboKelasPenerbangan.getValue());
+            System.out.println(dtpPergi.getValue());
+
+
         }
         catch (DateException e){
             e.periksaTanggal();
