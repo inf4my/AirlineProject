@@ -111,8 +111,9 @@ public class CustomerAL {
                     alert.setHeaderText("Hallo, "+firstName);
                     alert.setContentText("Silahkan bertransaksi");
                     alert.showAndWait();
-                   //ControllerMasuk controllerMasuk = new ControllerMasuk();
-                    //controllerMasuk.set(firstName);
+                    //ControllerMasuk controllerMasuk = new ControllerMasuk();
+                   // controllerMasuk.benerGa('y');
+                    user.setStatus('y');
                 }
             }
             catch (Exception e){
