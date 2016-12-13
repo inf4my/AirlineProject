@@ -14,6 +14,7 @@ public class Customer{
     private String fName;
     private String lName;
     private String email;
+    private String jenisKelamin;
     private String phoneNumber;
     private String username;
     private String password;
@@ -30,6 +31,8 @@ public class Customer{
     public String getEmail(){
         return email;
     }
+
+    public String getSex() {return jenisKelamin;}
 
     public String getPhoneNumber(){
         return phoneNumber;
@@ -55,10 +58,11 @@ public class Customer{
         }
     }
 
-    public Customer(String fName, String lName, String email, String phoneNumber, String username, String password)throws EmptyPropertyException{
+    public Customer(String fName, String lName, String email, String jenisKelamin, String phoneNumber, String username, String password)throws EmptyPropertyException{
         if(fName.equals("")) throw new EmptyPropertyException("Firstname field is required");
         if(lName.equals(""))  throw new EmptyPropertyException("LastName field is required");
         if(email.equals(""))  throw new EmptyPropertyException("Email field is required");
+        if(jenisKelamin.equals(""))  throw new EmptyPropertyException("Jenis kelamin field is required");
         if(phoneNumber.equals(""))  throw new EmptyPropertyException("Phone Number field is required");
         if(username.equals("")) throw new EmptyPropertyException("Username field is required");
         if(password.equals("")) throw new EmptyPropertyException("Password field is required");
@@ -66,6 +70,7 @@ public class Customer{
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+        this.jenisKelamin = jenisKelamin;
         this.phoneNumber = phoneNumber;
         this.username=username;
         this.password=hash(password);

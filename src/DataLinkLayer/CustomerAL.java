@@ -12,6 +12,7 @@ import java.sql.ResultSet;
  * Created by inf4my on 11/30/2016.
  */
 public class CustomerAL {
+    Customer user;
     private static Connection connection;
     private static boolean connect(){
         connection = null;
@@ -40,9 +41,9 @@ public class CustomerAL {
         }
     }
 
-    public void insertUser(String fName, String lName, String email, String phoneNumber, String userName, String password){
+    public void insertUser(String fName, String lName, String email, String sex, String phoneNumber, String userName, String password){
         if(connect()){
-            String query = "INSERT INTO customer(firstName, lastName, email, phoneNumber, username, password) VALUES('"+fName+"', '"+lName+"', '"+email+"', '"+phoneNumber+"', '"+userName+"', '"+password+"');";
+            String query = "INSERT INTO customer(firstName, lastName, email, jenisKelamin, phoneNumber, username, password) VALUES('"+fName+"', '"+lName+"', '"+email+"','"+sex+"', '"+phoneNumber+"', '"+userName+"', '"+password+"');";
             PreparedStatement stmt = null;
             //System.out.println(query);
             try {
@@ -69,7 +70,7 @@ public class CustomerAL {
     }
 
     //Get User for Login
-    public void getUser(String usernameIn, String passwordIn){
+    public Customer getUser(String usernameIn, String passwordIn){
         if(connect()){
            // String firstName = null;
             boolean isAvailable = false;
@@ -96,32 +97,26 @@ public class CustomerAL {
 
                 else{
                     System.out.println("Data ada");
-                    //System.out.println("tes");
-                    //String firstName='';
-                    while(resultSet.next()){
-                        //Customer customer = null;
-                        System.out.println("tes");
-                        String firstName = resultSet.getString("firstName");
+                    String firstName = resultSet.getString("firstName");
+                    String lastName = resultSet.getString("lastName");
+                    String jenisKelamin = resultSet.getString("jenisKelamin");
+                    String email = resultSet.getString("email");
+                    String phoneNumber = resultSet.getString("phoneNumber");
+                    String username = resultSet.getString("username");
+                    String password = resultSet.getString("password");
+                    System.out.println(firstName + " " +lastName);
+                    user = new Customer(firstName, lastName, jenisKelamin, email, phoneNumber, username, password);
 
-                        String lastName = resultSet.getString("lastName");
-                        System.out.println("tes");
-                        String email = resultSet.getString("email");
-                        String phoneNumber = resultSet.getString("phoneNumber");
-                        String username = resultSet.getString("username");
-                        String password = resultSet.getString("password");
 
-                    }
+
                    /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Login Berhasil");
                     alert.setHeaderText("Hallo, ");
                     alert.setContentText("Silahkan bertransaksi");
                     alert.showAndWait(); */
-                   // ControllerMasuk controllerMasuk = new ControllerMasuk();
+                   //ControllerMasuk controllerMasuk = new ControllerMasuk();
                     //controllerMasuk.set(firstName);
-
                 }
-
-
             }
             catch (Exception e){
                 System.out.println("Data tidak ada");
@@ -145,6 +140,7 @@ public class CustomerAL {
             }
         }
        // return;
+        return user;
     }
 
 

@@ -9,6 +9,7 @@ import BusinessLayer.Customer;
 import Exception.EmptyPropertyException;
 import DataLinkLayer.ConnectionConfiguration;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 
 /**
  * Created by inf4my on 11/30/2016.
@@ -17,6 +18,9 @@ public class ControllerSignUp {
     Customer user;
     @FXML
     JFXTextField txtNamaDepan, txtNamaBelakang, txtEmail, txtNomorTelepon, txtNamaAkun;
+
+    @FXML
+    ComboBox<String> cboSex;
 
     @FXML
     JFXPasswordField txtPassword, txtPasswordUlang;
@@ -32,9 +36,17 @@ public class ControllerSignUp {
             alert.showAndWait();
             return;
         }
-        user = new Customer(txtNamaDepan.getText(), txtNamaBelakang.getText(), txtEmail.getText(), txtNomorTelepon.getText(),  txtNamaAkun.getText(), txtPassword.getText());
+        String sex;
+        if (cboSex.getValue().toString().equals("Pria")){
+            sex = "l";
+        }
+        else{
+            sex = "p";
+        }
+        user = new Customer(txtNamaDepan.getText(), txtNamaBelakang.getText(), txtEmail.getText(), sex , txtNomorTelepon.getText(),  txtNamaAkun.getText(), txtPassword.getText());
+        //System.out.println(user.getSex());
         CustomerAL input = new CustomerAL();
-        input.insertUser(user.getfName(), user.getlName(), user.getEmail(), user.getPhoneNumber(), user.getUsername(), user.getPassword());
+        input.insertUser(user.getfName(), user.getlName(), user.getEmail(), user.getSex(), user.getPhoneNumber(), user.getUsername(), user.getPassword());
 
     }
 }

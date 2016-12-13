@@ -20,6 +20,7 @@ import java.security.MessageDigest;
  * Created by lionery on 30/11/2016.
  */
 public class ControllerMasuk {
+    private String firstName;
     @FXML
     JFXButton btnBatal;
 
@@ -46,13 +47,13 @@ public class ControllerMasuk {
             return "";
         }
     }
-    private String firstName;
 
     public void set(String f){
-        firstName = f;
+        this.firstName = f;
+        //System.out.println(firstName);
     }
 
-    public String get(){
+    public String getFirstName(){
         return firstName;
     }
 
@@ -67,7 +68,7 @@ public class ControllerMasuk {
         CustomerAL check = new CustomerAL();
         check.getUser(usernameIn,passwordIn);
         //String a = get();
-        //System.out.println(a); //masih belum bisa ngoper yang di select
+        System.out.println(getFirstName()); //masih belum bisa ngoper yang di select
 
     }
 
