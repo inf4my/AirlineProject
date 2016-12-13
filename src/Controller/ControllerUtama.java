@@ -134,7 +134,7 @@ public class ControllerUtama {
             entryStage.show();
             entryStage.requestFocus();
             ControllerMasuk loginController = (ControllerMasuk) loader.getController();
-            loginController.operObjek(user);
+            loginController.operObjek(user, btnLogin);
         }
         catch (Exception e){
             e.printStackTrace();
