@@ -15,19 +15,28 @@ import javafx.stage.Stage;
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.ArrayList;
 
 /**
  * Created by lionery on 30/11/2016.
  */
 public class ControllerMasuk {
+    ArrayList<Customer> user;
+    Customer temp;
+    private String firstName;
     @FXML
-    JFXButton btnBatal;
+    JFXButton btnBatal, btnMasuk;
 
     @FXML
     JFXTextField txtUsername;
 
     @FXML
     JFXPasswordField txtPassword;
+
+
+    public void operObjek(ArrayList<Customer> user){
+        this.user = user;
+    }
 
     public void handleBtnBatal(){
         btnBatal.getScene().getWindow().hide();
@@ -46,28 +55,25 @@ public class ControllerMasuk {
             return "";
         }
     }
-    private String firstName;
 
     public void set(String f){
-        firstName = f;
+        this.firstName = f;
+        //System.out.println(firstName);
     }
 
-    public String get(){
+    public String getFirstName(){
         return firstName;
     }
 
     public void handleBtnMasuk() throws Exception{
-        //udh bs
-        //Customer customer = null;
         String usernameIn = txtUsername.getText();
         String pass = txtPassword.getText();
         String passwordIn = hash(pass);
         //System.out.println(passwordIn);
-        //customer.login(usernameIn, passwordIn);
         CustomerAL check = new CustomerAL();
-        check.getUser(usernameIn,passwordIn);
-        //String a = get();
-        //System.out.println(a); //masih belum bisa ngoper yang di select
+        temp = check.getUser(usernameIn,passwordIn);
+        user.add(temp);
+        btnMasuk.getScene().getWindow().hide();
 
     }
 
