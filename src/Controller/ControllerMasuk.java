@@ -25,13 +25,14 @@ public class ControllerMasuk {
     Customer temp;
     private String firstName;
     @FXML
-    JFXButton btnBatal;
+    JFXButton btnBatal, btnMasuk;
 
     @FXML
     JFXTextField txtUsername;
 
     @FXML
     JFXPasswordField txtPassword;
+
 
     public void operObjek(ArrayList<Customer> user){
         this.user = user;
@@ -65,18 +66,14 @@ public class ControllerMasuk {
     }
 
     public void handleBtnMasuk() throws Exception{
-        //udh bs
-        //Customer customer = null;
         String usernameIn = txtUsername.getText();
         String pass = txtPassword.getText();
         String passwordIn = hash(pass);
         //System.out.println(passwordIn);
-        //customer.login(usernameIn, passwordIn);
         CustomerAL check = new CustomerAL();
         temp = check.getUser(usernameIn,passwordIn);
         user.add(temp);
-        //String a = get();
-        //ystem.out.println(user.getfName()); //masih belum bisa ngoper yang di select
+        btnMasuk.getScene().getWindow().hide();
 
     }
 

@@ -80,7 +80,6 @@ public class CustomerAL {
 
             try{
                 statement = connection.prepareStatement(q);
-                //statement = (PreparedStatement) connection.createStatement();
                 ResultSet resultSet = statement.executeQuery();
 
                 if(resultSet.absolute(1)){
@@ -107,13 +106,11 @@ public class CustomerAL {
                     System.out.println(firstName + " " +lastName);
                     user = new Customer(firstName, lastName, jenisKelamin, email, phoneNumber, username, password);
 
-
-
-                   /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Login Berhasil");
-                    alert.setHeaderText("Hallo, ");
+                    alert.setHeaderText("Hallo, "+firstName);
                     alert.setContentText("Silahkan bertransaksi");
-                    alert.showAndWait(); */
+                    alert.showAndWait();
                    //ControllerMasuk controllerMasuk = new ControllerMasuk();
                     //controllerMasuk.set(firstName);
                 }
