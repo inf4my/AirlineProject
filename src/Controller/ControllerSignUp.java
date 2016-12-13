@@ -30,7 +30,7 @@ public class ControllerSignUp {
 
     public void operObjek(ArrayList<Customer> user){
         this.user = user;
-        System.out.println(this.user.get(0).getUsername());
+        //System.out.println(this.user.get(0).getUsername());
     }
 
     @FXML

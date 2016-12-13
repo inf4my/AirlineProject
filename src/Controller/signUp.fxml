@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -17,7 +17,7 @@
       <JFXTextField fx:id="txtNamaDepan" layoutX="198.0" layoutY="21.0" />
       <JFXTextField fx:id="txtNamaBelakang" layoutX="198.0" layoutY="61.0" />
       <JFXTextField fx:id="txtEmail" layoutX="198.0" layoutY="103.0" />
-      <ComboBox fx:id="cboSex" layoutX="198.0" layoutY="152.0" prefWidth="150.0">
+      <JFXComboBox fx:id="cboSex" layoutX="198.0" layoutY="152.0" prefHeight="25.0" prefWidth="149.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Pria" />
@@ -25,9 +25,9 @@
             </FXCollections>
          </items>
          <value>
-            <String fx:value="Pria"></String>
+            <String fx:value="Pria" />
          </value>
-              </ComboBox>
+      </JFXComboBox>
       <JFXTextField fx:id="txtNomorTelepon" layoutX="198.0" layoutY="183.0" />
       <JFXTextField fx:id="txtNamaAkun" layoutX="198.0" layoutY="223.0" />
       <JFXPasswordField fx:id="txtPassword" layoutX="198.0" layoutY="261.0" />
