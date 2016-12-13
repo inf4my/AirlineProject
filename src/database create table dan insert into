@@ -1,5 +1,7 @@
 CREATE DATABASE airline;
 
+USE DATABASE airline;
+
 CREATE TABLE customer(
     firstName varchar(50),
 	lastName varchar(50),
