@@ -35,11 +35,39 @@ public class ControllerSignUp {
 
     @FXML
     public void handleBtnDaftar() throws EmptyPropertyException {
+        if(txtNamaDepan.getText().isEmpty() || txtNamaBelakang.getText().isEmpty() || txtEmail.getText().isEmpty() || txtNomorTelepon.getText().isEmpty()
+                ||txtNamaAkun.getText().isEmpty() || txtPassword.getText().isEmpty()|| txtPasswordUlang.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Kesalahan pada Kolom Input");
+            alert.setHeaderText("Masalah pada input");
+            alert.setContentText("Harap isi semua kolom isian");
+
+            alert.showAndWait();
+            return;
+        }
+        if(!txtEmail.getText().contains("@")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Kesalahan pada Kolom Email");
+            alert.setHeaderText("Masalah pada input");
+            alert.setContentText("Email yang dimasukkan tidak memenuhi standar");
+
+            alert.showAndWait();
+            return;
+        }
         if (!txtPassword.getText().toString().equals(txtPasswordUlang.getText().toString())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Kesalahan pada password");
             alert.setHeaderText("Masalah pada input");
             alert.setContentText("Kata sandi yang dimasukkan tidak sama");
+
+            alert.showAndWait();
+            return;
+        }
+        if(!txtNomorTelepon.getText().matches("[0-9]+")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Keasalahan pada Kolom Nomor telepon");
+            alert.setHeaderText("Masalah pada input");
+            alert.setContentText("Nomor telepon mengandung selain angka");
 
             alert.showAndWait();
             return;
