@@ -164,6 +164,15 @@ public class ControllerUtama {
         btnSdhMsk.setVisible(false);
         btnLogin.setVisible(true);
         btnSignUp.setVisible(true);
+        cboAsal.setValue("JAKARTA (JKT)");
+        cboTujuan.setValue("Tujuan");
+        cboTiketDewasa.setValue("1");
+        cboTiketAnak.setValue("0");
+        cboTiketBayi.setValue("0");
+        dtpPergi.setValue(LocalDate.now());
+        dtpPulang.setValue(null);
+        dtpPulang.setPromptText("Tanggal Kepulangan");
+        cboKelasPenerbangan.setValue("Ekonomi");
     }
 
 

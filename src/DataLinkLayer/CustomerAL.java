@@ -106,9 +106,10 @@ public class CustomerAL {
                     System.out.println(firstName + " " +lastName);
                     user = new Customer(firstName, lastName, jenisKelamin, email, phoneNumber, username, password);
 
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Login Berhasil");
-                    alert.setHeaderText("Hallo, "+firstName);
+                    alert.setHeaderText("Hallo, "+firstName +" " +lastName);
                     alert.setContentText("Silahkan bertransaksi");
                     alert.showAndWait();
                     //ControllerMasuk controllerMasuk = new ControllerMasuk();
