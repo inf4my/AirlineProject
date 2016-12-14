@@ -57,7 +57,9 @@ public class ControllerConfirmation {
         txtTujuan1.setText(tujuan2);
         txtWaktuBerangkat1.setText(waktuBerangkat2);
         txtWaktuSampai1.setText(waktuSampai2);
-        txtTotalBiaya.setText(totalBiaya2);
+        txtKelas1.setText(kelas);
+
+        txtTotalBiaya1.setText(totalBiaya2);
     }
     @FXML
     public void handleBtnConfirm(ActionEvent event){
@@ -66,7 +68,7 @@ public class ControllerConfirmation {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("metodeBayar.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
-            entryStage.setTitle("Searching Flight");
+            entryStage.setTitle("Payment");
             entryStage.setScene(new Scene(entryForm, 735,409));
             entryStage.show();
             entryStage.requestFocus();

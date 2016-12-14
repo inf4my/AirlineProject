@@ -255,8 +255,8 @@ public class ControllerSearchFlight {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("confirmation.fxml"));
             Parent entryForm = loader.load();
             Stage entryStage = new Stage();
-            entryStage.setTitle("Searching Flight");
-            entryStage.setScene(new Scene(entryForm, 1200, 600));
+            entryStage.setTitle("Confirmation");
+            entryStage.setScene(new Scene(entryForm, 924, 600));
             entryStage.show();
             entryStage.requestFocus();
             entryStage.getIcons().add(new Image(this.getClass().getResource("search.png").toString()));
