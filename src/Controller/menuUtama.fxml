@@ -16,7 +16,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUtama">
    <children>
       <JFXButton fx:id="btnLogin" layoutX="517.0" layoutY="14.0" onAction="#handleBtnLogin" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Masuk" textFill="WHITE" />
       <JFXButton fx:id="btnSignUp" layoutX="655.0" layoutY="14.0" onAction="#handleButtonSignUp" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #1565C0;" text="Pendaftaran Akun" textFill="WHITE" />
@@ -45,7 +45,7 @@
                   <String fx:value="JAKARTA (JKT)" />
                </value>
             </JFXComboBox>
-            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" prefHeight="25.0" prefWidth="155.0" promptText="Tujuan">
+            <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" onAction="#handlerTujuanException" prefHeight="25.0" prefWidth="155.0" promptText="Tujuan">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="BALI/DENPASAR (DPS)" />
@@ -100,7 +100,7 @@
                   <String fx:value="0" />
                </value>
             </JFXComboBox>
-            <JFXComboBox fx:id="cboTiketBayi" layoutX="625.0" layoutY="35.0" prefHeight="25.0" prefWidth="0.0">
+            <JFXComboBox fx:id="cboTiketBayi" layoutX="625.0" layoutY="35.0" onAction="#handlerBayiException" prefHeight="25.0" prefWidth="0.0">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="0" />
