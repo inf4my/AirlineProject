@@ -33,36 +33,9 @@
             <JFXComboBox fx:id="cboAsal" layoutX="21.0" layoutY="52.0" prefHeight="25.0" prefWidth="155.0">
                <items>
                      <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="AMBON (AMQ)" />
                      <String fx:value="BALI/DENPASAR (DPS)" />
-                     <String fx:value="BALIKPAPAN (BPN)" />
                      <String fx:value="BANDA ACEH (BTJ)" />
-                     <String fx:value="BANDUNG (BDO)" />
-                     <String fx:value="BANJARMASIN (BDJ)" />
-                     <String fx:value="BATAM (BTH)" />
-                     <String fx:value="BIAK (BIK)" />
-                     <String fx:value="GORONTALO (GTO)" />
                      <String fx:value="JAKARTA (JKT)" />
-                     <String fx:value="JAMBI (DJB)" />
-                     <String fx:value="JAYAPURA (DJJ)" />
-                     <String fx:value="YOGYAKARTA (JOG)" />
-                     <String fx:value="KENDARI (KDI)" />
-                     <String fx:value="KUPANG (KOE)" />
-                     <String fx:value="LOMBOK (LOP)" />
-                     <String fx:value="MALANG (MLG)" />
-                     <String fx:value="MANADO (MDO)" />
-                     <String fx:value="PADANG (PDG)" />
-                     <String fx:value="PALANGKARAYA (PKY)" />
-                     <String fx:value="PALEMBANG (PLM)" />
-                     <String fx:value="PALU (PLW)" />
-                     <String fx:value="PANGKAL PINANG (PGK)" />
-                     <String fx:value="PEKANBARU (PKU)" />
-                     <String fx:value="PONTIANAK (PNK)" />
-                     <String fx:value="SEMARANG (SRG)" />
-                     <String fx:value="SOLO (SOC)" />
-                     <String fx:value="SURABAYA (SUB)" />
-                     <String fx:value="BANDAR LAMPUNG/TANJUNG KARANG (TKG)" />
-                     <String fx:value="TERNATE (TTE)" />
                      <String fx:value="TIMIKA (TIM)" />
                      <String fx:value="UJUNG PANDANG/MAKASSAR (UPG)" />
                   </FXCollections>
@@ -75,36 +48,9 @@
             <JFXComboBox fx:id="cboTujuan" layoutX="21.0" layoutY="120.0" onAction="#handlerTujuanException" prefHeight="25.0" prefWidth="155.0" promptText="Tujuan">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="AMBON (AMQ)" />
                      <String fx:value="BALI/DENPASAR (DPS)" />
-                     <String fx:value="BALIKPAPAN (BPN)" />
                      <String fx:value="BANDA ACEH (BTJ)" />
-                     <String fx:value="BANDUNG (BDO)" />
-                     <String fx:value="BANJARMASIN (BDJ)" />
-                     <String fx:value="BATAM (BTH)" />
-                     <String fx:value="BIAK (BIK)" />
-                     <String fx:value="GORONTALO (GTO)" />
                      <String fx:value="JAKARTA (JKT)" />
-                     <String fx:value="JAMBI (DJB)" />
-                     <String fx:value="JAYAPURA (DJJ)" />
-                     <String fx:value="YOGYAKARTA (JOG)" />
-                     <String fx:value="KENDARI (KDI)" />
-                     <String fx:value="KUPANG (KOE)" />
-                     <String fx:value="LOMBOK (LOP)" />
-                     <String fx:value="MALANG (MLG)" />
-                     <String fx:value="MANADO (MDO)" />
-                     <String fx:value="PADANG (PDG)" />
-                     <String fx:value="PALANGKARAYA (PKY)" />
-                     <String fx:value="PALEMBANG (PLM)" />
-                     <String fx:value="PALU (PLW)" />
-                     <String fx:value="PANGKAL PINANG (PGK)" />
-                     <String fx:value="PEKANBARU (PKU)" />
-                     <String fx:value="PONTIANAK (PNK)" />
-                     <String fx:value="SEMARANG (SRG)" />
-                     <String fx:value="SOLO (SOC)" />
-                     <String fx:value="SURABAYA (SUB)" />
-                     <String fx:value="BANDAR LAMPUNG/TANJUNG KARANG (TKG)" />
-                     <String fx:value="TERNATE (TTE)" />
                      <String fx:value="TIMIKA (TIM)" />
                      <String fx:value="UJUNG PANDANG/MAKASSAR (UPG)" />
                   </FXCollections>
