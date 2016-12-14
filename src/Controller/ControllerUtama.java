@@ -168,8 +168,11 @@ public class ControllerUtama {
             alert.setTitle("Date");
             alert.setHeaderText("Date Error");
             alert.setContentText("Tanggal Berangkat Lebih besar dari tanggal pergi");
-            alert.showAndWait();
-            dtpPulang.setValue(LocalDate.now());
+            alert.show();
+            dtpPulang.setStyle("-fx-background-color:red");
+        }
+        else{
+            dtpPulang.setStyle("");
         }
     }
 
@@ -189,5 +192,35 @@ public class ControllerUtama {
         cboKelasPenerbangan.setValue("Ekonomi");
     }
 
+
+    @FXML
+    public void handlerTujuanException() {
+        if(cboAsal.getValue().equals(cboTujuan.getValue())) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Destination");
+            alert.setHeaderText("Destination Error");
+            alert.setContentText("Tujuan keberangkatan tidak boleh sama dengan tempat keberangkatan.");
+            alert.show();
+            cboTujuan.setStyle("-fx-background-color:red");
+        }
+        else{
+            cboTujuan.setStyle("");
+        }
+    }
+
+    @FXML
+    public void handlerBayiException(){
+        if(Integer.parseInt(cboTiketBayi.getValue())>Integer.parseInt(cboTiketDewasa.getValue())){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Jumlah Penumpang");
+            alert.setHeaderText("Penumpang Error");
+            alert.setContentText("Jumlah bayi tidak boleh lebih banyak dari jumlah dewasa");
+            alert.show();
+            cboTiketBayi.setStyle("-fx-background-color:red");
+        }
+        else {
+            cboTiketBayi.setStyle("");
+        }
+    }
 
 }
